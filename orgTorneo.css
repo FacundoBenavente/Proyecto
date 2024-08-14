@@ -1,0 +1,21 @@
+h1{
+    display: flex;
+    justify-content: center;
+  }
+  button{
+    cursor: pointer;
+    border: none;
+    width: 140px;
+    height: 50px;
+    color: #ffffff;
+    background-color: #cfcfcf;
+  }
+  button:hover{
+    background-color: #a09898;
+    color: #ffffff;
+    transition-duration: 0.4s;
+  }
+  div{
+    display: flex;
+    justify-content: center;
+  }

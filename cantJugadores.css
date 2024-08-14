@@ -1,0 +1,37 @@
+button{
+    cursor: pointer;
+    border: none;
+    width: 280px;
+    height: 120px;
+    margin: 2%;
+    transition-duration: 0.4s;
+  }
+    .rojo{
+      color: white;
+      background-color: #f45757;
+    }
+    .rojo:hover{
+      background-color: #ff3838;
+    }
+    .azul{
+      color: white;
+      background-color: #6b6bff;
+    }
+    .azul:hover{
+      background-color: #3737fb;
+    }
+    h1{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8%;
+    }
+    #arriba{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #abajo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }

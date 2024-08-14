@@ -1,0 +1,86 @@
+button{
+    cursor: pointer;
+  }
+#Titulos{ 
+  color:white;
+  margin-bottom: 20px;
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+  #LoginBox{
+    width: 100%;
+
+  }
+  #Login1{
+    width: 50%;
+    float: left;
+  }
+  #Login2{
+    width: 50%;
+    float: left;
+  }
+  h6{
+    cursor: pointer;
+    color: #d2c6c6;
+  }
+  h6:hover{
+  color: white    
+  }
+
+  .submitBtn{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .submitBtn:hover{
+    background-color: #e7e4e4;
+  }
+  .centrado{
+    text-align: center;
+  }
+  label{
+    color: white;
+    margin-left: 10%;
+  }
+  body {
+    background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
+  }
+  .txtbox{
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom-color: white;
+    display: block;
+
+    padding: 10px;
+    width: 50%;
+    height: 10%;
+    margin-left: 10%;
+    resize: none;
+    
+    overflow: auto;
+  }
+  #user-email{
+    background-color: #5D59FF;
+    color:white;
+  }
+  #Contraseña{
+    background-color: #5D59FF;
+    color:white;
+  }
+  #user-email2{
+    background-color: #FF4D4D;
+    color:white;
+  }
+  #Contraseña2{
+    background-color: #FF4D4D;
+    color: white;
+
+  }

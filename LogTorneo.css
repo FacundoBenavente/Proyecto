@@ -1,0 +1,28 @@
+
+    body {
+      background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
+    }
+    h1{
+      margin-left: 20%;
+    }
+    .submitBtn{
+      margin-left: 21%;
+      cursor: pointer
+    }
+    .txtbox{
+      background-color:#5D59FF;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-bottom-color: white;
+      display: block;
+  
+      padding: 10px;
+      width: 40%;
+      height: 10%;
+  
+      resize: none;
+  
+      overflow: auto;
+    }
+  

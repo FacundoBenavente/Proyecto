@@ -1,0 +1,25 @@
+
+  #Usuarios{
+    display: flex;
+    justify-content: space-around;
+  }
+  #Marcador{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .marca{
+   font-size: 100px;
+  }
+  #guion{
+   margin-top: -10px;
+  }
+  #Countdown{
+    display: flex;
+    justify-content: center;
+  }
+  #count{
+    font-size: 100px;
+  }
+  body {
+    background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
+  }

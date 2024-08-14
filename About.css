@@ -1,0 +1,14 @@
+    body {
+      background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
+    }
+    button{
+      cursor: pointer;
+    }
+     #AboutTxtBox{
+      width: 40%;
+        margin-right: auto; 
+      }
+    #atras_about{
+      border: none;
+    }
+  
