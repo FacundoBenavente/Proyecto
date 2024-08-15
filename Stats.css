@@ -3,19 +3,49 @@
     display: flex;
     justify-content: space-around;
   }
-  #WinLoose{
-    margin: 5%;
+
+  #ganados_perdidos{
     display: flex;
+    justify-content: space-around;
     
   }
-  #WinLoose2{
-    margin: 5%;
-    display: flex;
-
+  .ganar_perder{
+    background-color: white;
+    padding-bottom: 80px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    font-size: 8px;
   }
+  #wins{
+    margin-right: 10px;
+  }
+
   body {
     background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
   }
+  #box{
+    background-color: white;
+    font-size: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
   .Titulo{
       color: white;
+      text-align: center;
   }
+  button{
+    cursor: pointer;
+    width: 200px;
+    height: 70px;
+    border: none;
+    margin-left: 10%;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 20px;
+    }
+    button:hover{
+      background-color: #cfcaca;
+    }

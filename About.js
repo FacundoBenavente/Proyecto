@@ -1,3 +1,3 @@
 function goInicio(){
-    window.location = "main.html";
+    window.location = "index.html";
   }
