@@ -8,14 +8,30 @@ h1{
     width: 140px;
     height: 50px;
     color: #ffffff;
-    background-color: #cfcfcf;
+    background-color: #e9dfdf;
+   
   }
   button:hover{
     background-color: #a09898;
     color: #ffffff;
     transition-duration: 0.4s;
   }
-  div{
-    display: flex;
-    justify-content: center;
+  .Siguiente{
+    text-align: center;
   }
+  .Caja_titulo{
+      width:auto;
+       height: 80px;
+       padding: 8px;
+       background-color: #f1ebeb;
+     }
+     body{
+       margin: 0px;
+     }
+     .TablaTorneo{
+       height: 250px;
+       width: 500px;
+       background-color: rgb(236, 221, 221);
+       display: flex;
+       justify-content: center;
+     }

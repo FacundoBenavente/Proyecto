@@ -35,3 +35,12 @@ button{
       justify-content: center;
       align-items: center;
     }
+    .cajaTitulo{
+      width:auto;
+      height: 80px;
+      padding: 8px;
+      background-color: #d6cbcb;
+    }
+    body{
+      margin: 0px;
+    }
