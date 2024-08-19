@@ -1,14 +1,24 @@
-var boton1 = "";
-var boton2 = "";
+var boton1 = false;
+var boton2 = false;
 
 function Button1(){
-        boton1 = "SI";
+if(boton1 === false){
+boton1 = true;
+}else if(boton1 = true){
+boton1 = false;
+}
+checkButtons();
 }
 function Button2(){
-        boton2 = "SI";
+ if(boton2 === false){
+boton2 = true;
+} else if(boton2 = true){
+boton2 = false;
 }
-
-if(boton1 == "SI" && boton2 == "SI"){
+checkButtons();
+}
+function checkButtons() {
+if(boton1 === true && boton2 === true){
     window.location = "Partido.html";
-
+        }
 }
