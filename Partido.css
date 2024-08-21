@@ -1,6 +1,6 @@
 
   #Usuarios{
-    margin-top: 20px;
+    margin-top: 30px;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -19,7 +19,7 @@
   #Countdown{
     background-color: white;
     display: inline-flex;
-    padding: 40px 0px 0px 40px;
+    padding: 40px 10px 0px 20px;
     justify-content: flex-end;
     align-items: center;
   }
