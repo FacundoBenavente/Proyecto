@@ -3,11 +3,31 @@
       background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
     }
     h1{
-      margin-left: 20%;
+      color:white;
+      margin-bottom: 10%;
+      font-family: "Inter", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: normal;
     }
+ 
     .submitBtn{
-      margin-left: 21%;
-      cursor: pointer
+      cursor: pointer;
+      background-color: white;
+      border: none;
+      border-radius: 20px;
+      width: 200px;
+      height: 70px;
+      margin-top: 10px;
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 25px;
+      font-style: normal;
+      line-height: normal;
+    }
+    .submitBtn:hover{
+      background-color: #e7e4e4;
     }
     .txtbox{
       background-color:#5D59FF;
@@ -18,11 +38,22 @@
       display: block;
   
       padding: 10px;
-      width: 40%;
+      width: 70%;
       height: 10%;
-  
+      margin-left: 10%;
       resize: none;
+      margin-bottom: 10%;
   
       overflow: auto;
     }
-  
+    .centrado{
+      text-align: center;
+    }
+    #Login{
+      width: 50%;
+      float: left;
+    }
+    label{
+      color: white;
+      margin-left: 10%;
+    }

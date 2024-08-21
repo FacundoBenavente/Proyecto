@@ -21,9 +21,14 @@ button{
       background-color: #3737fb;
     }
     h1{
-      display: flex;
-      justify-content: center;
-      margin-bottom: 8%;
+      color: white;
+      margin-top: 15px;
+      margin-left: 100px;
+      font-family: "Inter", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: normal;
     }
     #arriba{
       display: flex;
@@ -39,8 +44,15 @@ button{
       width:auto;
       height: 80px;
       padding: 8px;
-      background-color: #d6cbcb;
+      background-color: #282323;
+      margin-bottom: 100px;
+      display: flex;
+      justify-content: flex-start;
     }
     body{
       margin: 0px;
+    }
+    img{
+      height: 80px;
+      width: 280px;
     }

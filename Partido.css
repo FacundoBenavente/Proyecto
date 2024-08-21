@@ -1,9 +1,12 @@
 
   #Usuarios{
+    margin-top: 20px;
+    color: white;
     display: flex;
     justify-content: space-around;
   }
   #Marcador{
+    color: white;
     display: flex;
     justify-content: space-evenly;
   }
@@ -14,11 +17,22 @@
    margin-top: -10px;
   }
   #Countdown{
-    display: flex;
-    justify-content: center;
+    background-color: white;
+    display: inline-flex;
+    padding: 40px 0px 0px 40px;
+    justify-content: flex-end;
+    align-items: center;
   }
   #count{
-    font-size: 100px;
+    color: #000;
+
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 330px;
+    height: 90px;
   }
   body {
     background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
