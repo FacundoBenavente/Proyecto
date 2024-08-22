@@ -23,12 +23,12 @@
       
     <form method= "POST">
     <label for="Email">E-mail</label><br>
-      <input type="email" id="user-email" name="userEmail" class="txtbox"/> 
+      <input type="email" id="txtEmail" name="txtEmail" class="txtbox"/> 
 <br><br>
     <label for="Password">Contraseña:</label><br>
-    <input type="text" id="Contraseña" name="Contraseña" class="txtbox"><br><br>
+    <input type="password" id="txtPass" name="txtPass" class="txtbox"><br><br>
       <div class="centrado">
-    <input class= "submitBtn"type="submit" value="Login">
+    <input onclick= "clickLogin()"id = "submitBtn1"class= "submitBtn"type="button" value="Login">
     <h6 onclick="Register1()">¿No tienes cuenta? Registrate</h6>
       </div>
     </form>
@@ -39,12 +39,12 @@
       </div>
     <form method= "POST">
     <label for="Email2">E-mail</label><br>
-      <input type="email" id="user-email2" name="userEmail" class= "txtbox"/> 
+      <input type="email" id="txtEmail2" name="txtEmail2" class= "txtbox"/> 
 <br><br>
     <label for="Password2">Contraseña:</label><br>
-    <input type="text" id="Contraseña2" name="Contraseña2" class= "txtbox"><br><br>
+    <input type="password" id="txtPass2" name="txtPass" class= "txtbox"><br><br>
       <div class="centrado">
-    <input class = "submitBtn" type="submit" value="Login">
+    <input id="submitBtn2" class = "submitBtn" type="submit" value="Login">
     <h6 onclick="Register2()">¿No tienes cuenta? Registrate</h6>
       </div>
     </form>

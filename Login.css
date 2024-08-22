@@ -79,19 +79,19 @@ button{
     
     overflow: auto;
   }
-  #user-email{
+  #txtEmail{
     background-color: #5D59FF;
     color:white;
   }
-  #Contraseña{
+  #txtPass{
     background-color: #5D59FF;
     color:white;
   }
-  #user-email2{
+  #txtEmail2{
     background-color: #FF4D4D;
     color:white;
   }
-  #Contraseña2{
+  #txtPass2{
     background-color: #FF4D4D;
     color: white;
   }
