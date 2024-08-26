@@ -87,11 +87,19 @@ button{
     background-color: #5D59FF;
     color:white;
   }
+  #txtName{
+    background-color: #5D59FF;
+    color:white;
+  }
   #txtEmail2{
     background-color: #FF4D4D;
     color:white;
   }
   #txtPass2{
+    background-color: #FF4D4D;
+    color: white;
+  }
+  #txtName2{
     background-color: #FF4D4D;
     color: white;
   }
