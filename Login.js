@@ -39,16 +39,19 @@ var jsonUser = JSON.stringify(usuario);
 localStorage.setItem(txtEmail.value, jsonUser);
 }
 
-/*function loginCuenta(){
- let userLog= localStorage.getItem(txtEmail.value);
- if(txtPass == ){
+function loginCuenta(){
+ let userLogin = localStorage.getItem(txtEmail.value);
+ let obj = JSON.parse(userLogin)
+ if(txtPass.value == obj.password){
      listo.hidden = false;
      listo.innerHTML = "¡Listo!";
+     submitBtn1.disabled = true;
+     submitBtn1.style.cursor = 
  } else{
      listo.hidden = false;
-     listo.innerHTML = "contraseña incorrecta";
- }
-}*/
+     listo.innerHTML = "E-mail o contraseña incorrectos";
+ } 
+}
 function crearCuenta2(){
     var usuario = {
         "email": txtEmail2.value,
