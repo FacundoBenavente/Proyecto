@@ -29,39 +29,6 @@ function Register2(){
     }
 }
 
-function crearCuenta(){
-var usuario = {
-    "email": txtEmail.value,
-    "password": txtPass.value,
-    "username": txtName.value
-}
-var jsonUser = JSON.stringify(usuario);
-localStorage.setItem(txtEmail.value, jsonUser);
-}
-
-function loginCuenta(){
- let userLogin = localStorage.getItem(txtEmail.value);
- let obj = JSON.parse(userLogin)
- if(txtPass.value == obj.password){
-     listo.hidden = false;
-     listo.innerHTML = "¡Listo!";
-     submitBtn1.disabled = true;
-     submitBtn1.style.cursor = 
- } else{
-     listo.hidden = false;
-     listo.innerHTML = "E-mail o contraseña incorrectos";
- } 
-}
-function crearCuenta2(){
-    var usuario = {
-        "email": txtEmail2.value,
-        "password": txtPass2.value,
-        "username": txtName2.value
-        }
-
-var jsonUser = JSON.stringify(usuario);
-localStorage.setItem(txtEmail2.value, jsonUser);
-    }
 function clickLogin(){
     if(submitBtn1.value == "Registrarse"){
         crearCuenta();
@@ -72,4 +39,22 @@ function clickLogin(){
         crearCuenta2();
     } 
 
+}
+function Logeado(){
+    listo.hidden = false;
+     listo.innerHTML = "¡Listo!";
+     submitBtn1.disabled = true;
+     txtEmail.disabled = true;
+     txtPass.disabled = true;
+     txtPass.style.cursor = "not-allowed";
+     txtEmail.style.cursor = "not-allowed";
+     submitBtn1.style.cursor = "not-allowed";
+}
+function Incorrecto(){
+    listo.hidden = false;
+     listo.innerHTML = "E-mail o contraseña incorrectos";
+}
+function cuentaExiste(){
+    listo.hidden = false;
+    listo.innerHTML = "Tu cuenta ya existe";
 }
