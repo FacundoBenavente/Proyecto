@@ -2,7 +2,7 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 122;
+var segundos = 3;//300;
 var segundos_muestra = 0;
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
@@ -21,22 +21,31 @@ function gol(mensaje){
     }
 
 
-function updateClock() {
-    while(segundos >= 60){
-        segundos - 60;
-        //segundos_muestra = segundos -60;
-        minutos = minutos + 1;
-    }
-    if(segundos > 10){
-    document.getElementById('Countdown').innerHTML ="0" + minutos + ":" + segundos_muestra;
-    } else if(segundos < 10){
-    document.getElementById('Countdown').innerHTML ="0" + minutos + ":" + "0" + segundos_muestra;
+  function updateClock() {
+    minutos = Math.floor(segundos/60);
+    if(minutos > 1){
+        segundos_muestra = segundos -60*minutos;
+    } else if(minutos <= 0){
+        segundos_muestra = segundos;
+    } 
+    if(segundos_muestra > 10){
+    count.innerHTML = minutos + ":" + segundos_muestra;
+    } else if(segundos_muestra < 10){
+    count.innerHTML = minutos + ":" + "0" + segundos_muestra;
     }
     if(segundos==0 && minutos == 0){
-      console.log('Final');
-    //}else if(segundos_muestra == 0 && minutos > 0){
-       // minutos = minutos-1;
-       // segundos_muestra = segundos - 60*minutos - 1;
+
+      msjFinal.hidden = false;
+      if(usgol1 > usgol2){
+          msjWin.innerHTML = "Ganó el usuario 1";
+          msjWin.hidden = false;
+      } else if(usgol2 > usgol1){
+          msjWin.innerHTML = "Ganó el usuario 2";
+          msjWin.hidden = false;
+      } else if(usgol1 == usgol2){
+          msjWin.innerHTML = "Empate";
+          msjWin.hidden = false;
+      }
     }else{
       segundos-=1;
       setTimeout("updateClock()",1000);
