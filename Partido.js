@@ -1,8 +1,9 @@
 var letra;
 var usgol1 = 0;
 var usgol2 = 0;
-var minutos = 1;
-var segundos = 1;
+var minutos = 0;
+var segundos = 122;
+var segundos_muestra = 0;
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
 });
@@ -21,18 +22,23 @@ function gol(mensaje){
 
 
 function updateClock() {
+    while(segundos >= 60){
+        segundos - 60;
+        //segundos_muestra = segundos -60;
+        minutos = minutos + 1;
+    }
     if(segundos > 10){
-    document.getElementById('Countdown').innerHTML = minutos + ":" + segundos;
+    document.getElementById('Countdown').innerHTML ="0" + minutos + ":" + segundos_muestra;
     } else if(segundos < 10){
-    document.getElementById('Countdown').innerHTML = minutos + ":" + "0" + segundos;
+    document.getElementById('Countdown').innerHTML ="0" + minutos + ":" + "0" + segundos_muestra;
     }
     if(segundos==0 && minutos == 0){
       console.log('Final');
-    }else if(segundos == 0 && minutos > 0){
-        segundos = segundos + 59;
-        minutos= minutos-1;
+    //}else if(segundos_muestra == 0 && minutos > 0){
+       // minutos = minutos-1;
+       // segundos_muestra = segundos - 60*minutos - 1;
     }else{
       segundos-=1;
       setTimeout("updateClock()",1000);
-    }
+      }
 }

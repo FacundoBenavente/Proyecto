@@ -1,3 +1,5 @@
+
+
 function Register1(){
     if(title1.innerHTML == "Login"){
     submitBtn1.value = "Registrarse";
