@@ -9,6 +9,7 @@ document.addEventListener("keydown", (letra) =>{
 });
 
 function gol(mensaje){
+    if(msjFinal.hidden == true){
     if(mensaje == "f"){
         usgol1 ++;
         Us1.innerHTML = usgol1;
@@ -19,6 +20,7 @@ function gol(mensaje){
         updateClock();
           }
     }
+}
 
 
   function updateClock() {
