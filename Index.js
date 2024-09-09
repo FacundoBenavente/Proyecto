@@ -1,3 +1,5 @@
+import { onEvent, sendEvent, startServer } from "soquetic";
+
 
 function crearCuenta(){
     let checkeo = localStorage.getItem(txtEmail.value);

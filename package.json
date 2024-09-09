@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/FacundoBenavente/Proyecto/issues"
   },
-  "homepage": "https://github.com/FacundoBenavente/Proyecto#readme"
+  "homepage": "https://github.com/FacundoBenavente/Proyecto#readme",
+  "dependencies": {
+    "soquetic": "^1.0.4"
+  }
 }
