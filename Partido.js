@@ -4,6 +4,7 @@ var usgol2 = 0;
 var minutos = 0;
 var segundos = 3;//300;
 var segundos_muestra = 0;
+var ganador;
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
 });
@@ -11,11 +12,15 @@ document.addEventListener("keydown", (letra) =>{
 function gol(mensaje){
     if(msjFinal.hidden == true){
     if(mensaje == "f"){
+        if(segundos_muestra > 0){
         usgol1 ++;
         Us1.innerHTML = usgol1;
+        }
     } else if(mensaje == "j"){
+        if(segundos_muestra > 0){
         usgol2 ++;
         Us2.innerHTML = usgol2;
+        }
     } else if(mensaje == "r"){
         updateClock();
           }
@@ -41,9 +46,11 @@ function gol(mensaje){
       if(usgol1 > usgol2){
           msjWin.innerHTML = "Ganó el usuario 1";
           msjWin.hidden = false;
+            ganador = "usuario 1";
       } else if(usgol2 > usgol1){
           msjWin.innerHTML = "Ganó el usuario 2";
           msjWin.hidden = false;
+            ganador = "usuario 2";
       } else if(usgol1 == usgol2){
           msjWin.innerHTML = "Empate";
           msjWin.hidden = false;
