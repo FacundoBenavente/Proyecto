@@ -1,9 +1,8 @@
-    
-  
-  body{
+   body{
     margin: 0px;
-     background-color: #EBE5E5;
- 
+     background: #82DA59;
+     background: url(fondo_futbots.jfif) lightgray 50% / cover no-repeat;
+     ;
    }
    #Titulo{
      display: flex;
@@ -24,7 +23,7 @@
      border: none;
      border-radius: 10px;
      color: #FFFCFC;
-     background-color: #282323;
+     background-color: #3D7125;
        font-family: "Inika", serif;
        font-weight: 400;
        font-style: normal;
@@ -32,47 +31,47 @@
  
    }
    .botonesArriba1:hover{
-     background-color: #433d3d;
+     background-color: #4a9b25;
      border-radius: 10px;
    }
 
    .partido{
-     background-color: #FF4D4D;
+     background-color: #FEFCFC;
      width: 800px;
      height: 100px;
-     color: white;
+     color: #539733;
      border: none;
        font-family: "Inter", sans-serif;
        font-optical-sizing: auto;
-       font-weight: 300;
+       font-weight: 700;
        font-style: normal;
-       font-size: 20px;
+       font-size: 40px;
        margin-bottom: 60px;
    }
    .partido:hover{
-     background-color: #fd2424;
+     background-color: #e2dede;
    }
    .torneo{
-     background-color: #5D59FF;
+     background-color: #FEFCFC;
     width: 800px;
     height: 100px;
-    color: white;
+    color: #539733;
     border: none;
       font-family: "Inter", sans-serif;
       font-optical-sizing: auto;
-      font-weight: 300;
+      font-weight: 700;
       font-style: normal;
-      font-size: 20px;
+      font-size: 40px;
    }
    .torneo:hover{
-    background-color: #231ff7;
+    background-color: #e2dede;
 
    }
    #botonera{
     width:auto;
      height: 40px;
      padding: 8px;
-     background-color: #282323;
+     background-color: #3D7125;
      display: flex;
      justify-content: space-between;
    }

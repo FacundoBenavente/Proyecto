@@ -1,5 +1,3 @@
-
-
 function Register1(){
     if(title1.innerHTML == "Login"){
     submitBtn1.value = "Registrarse";
@@ -33,12 +31,37 @@ function Register2(){
 
 function clickLogin(){
     if(submitBtn1.value == "Registrarse"){
-        crearCuenta();
+        var email1 = txtEmail.value;
+        var password1 = txtPass.value;
+        var username1 = txtName.value;
+        let useregister = {
+            email: email1,
+            password: password1,
+            username: username1
+        }
+        let data = fetchData("registro", useregister)
+        if(data === false){
+            cuentaExiste()
+        }
     } else{
-        loginCuenta();
+
+        var email1 = txtEmail.value;
+        var password1 = txtPass.value;
+        let user = {
+            email: email1,
+            password: password1
+        }
+       let data = fetchData("login", user)
+       if(data === true){
+        Logeado()
+       }else{
+           Incorrecto()
+       }
     }
     if(submitBtn2.value == "Registrarse"){
-        crearCuenta2();
+        var email2 = txtEmail2.value;
+        var password2 = txtPass2.value;
+        var username2 = txtName2.value;
     } 
 
 }
