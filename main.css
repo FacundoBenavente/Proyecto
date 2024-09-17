@@ -1,7 +1,7 @@
    body{
     margin: 0px;
-     background: #82DA59;
-     background: url(fondo_futbots.jfif) lightgray 50% / cover no-repeat;
+     background-color: #82DA59;
+     background: url(Fondo_futbots.png) #82DA59 20% / cover no-repeat;
      ;
    }
    #Titulo{
