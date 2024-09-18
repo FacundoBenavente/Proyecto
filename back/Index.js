@@ -1,16 +1,17 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 
+
 onEvent("registro", ()=>{crearCuenta()})
 
 function crearCuenta(){
-    let checkeo = localStorage.getItem(txtEmail.value);
+    let checkeo = localStorage.getItem(email);
     if(checkeo == "null"){
-   /* var usuario = {
+    var usuario = {
     "email": email,
     "password": password,
     "username": username 
-}*/
-var jsonUser = JSON.stringify(useregister);
+}
+var jsonUser = JSON.stringify(usuario);
 localStorage.setItem(email, jsonUser);
     return true;
     } else {
@@ -20,15 +21,15 @@ localStorage.setItem(email, jsonUser);
 onEvent("login", ()=>{loginCuenta()})
 
 function loginCuenta(){
- let userLogin = localStorage.getItem(email.value);
+ let userLogin = localStorage.getItem(email);
  let obj = JSON.parse(userLogin)
- if(useregister.password == obj.password){
+ if(user.password == obj.password){
     return true;
  } else{
     return false;
  } 
 }
-function crearCuenta2(){
+/*function crearCuenta2(){
     var usuario = {
         "email": txtEmail2.value,
         "password": txtPass2.value,
@@ -37,6 +38,6 @@ function crearCuenta2(){
 
 var jsonUser = JSON.stringify(usuario);
 localStorage.setItem(txtEmail2.value, jsonUser);
-    }
+    }*/
 
     startServer()

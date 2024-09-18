@@ -34,12 +34,12 @@ function clickLogin(){
         var email1 = txtEmail.value;
         var password1 = txtPass.value;
         var username1 = txtName.value;
-        let useregister = {
+        let user = {
             email: email1,
             password: password1,
             username: username1
         }
-        let data = fetchData("registro", useregister)
+        let data = fetchData("registro", user)
         if(data === false){
             cuentaExiste()
         }
