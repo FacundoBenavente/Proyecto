@@ -1,7 +1,7 @@
    body{
     margin: 0px;
      background-color: #82DA59;
-     background: url(Fondo_futbots.png) #82DA59 50% / cover no-repeat;
+     background: url(./Imgs/Fondo_futbots.png) #82DA59 50% / cover no-repeat;
      ;
    }
    #Titulo{
@@ -9,9 +9,11 @@
      justify-content: center;
      margin-bottom: 10%;
      margin-top: 5%;
-     font-family: "Inria Serif", serif;
-     font-weight: 400;
-     font-style: normal;
+     color: #000;
+     font-family: "KoHo";
+     font-style: italic;
+     font-weight: 700;
+     line-height: normal;
      font-size: 40px;
    }
  
@@ -39,18 +41,20 @@
      width: 800px;
      height: 100px;
      color: #539733;
-       margin-bottom: 60px;
+     margin-bottom: 60px;
+     cursor: pointer;
    }
    .partido:hover{
      width: 805px;
      height: 105px;
+     margin-bottom: 55px;
+     transition-duration: 00.4s;
    }
    .torneo{
-     background-color: #FEFCFC;
     width: 800px;
     height: 100px;
-    color: #539733;
     border: none;
+    cursor: pointer;
       font-family: "Inter", sans-serif;
       font-optical-sizing: auto;
       font-weight: 700;
@@ -58,7 +62,10 @@
       font-size: 40px;
    }
    .torneo:hover{
-    background-color: #e2dede;
+    width: 805px;
+    height: 105px;
+    transition-duration: 00.4s;
+    margin-top: -5px;
 
    }
    #botonera{
@@ -85,6 +92,5 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     cursor: pointer;
    }
  

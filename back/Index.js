@@ -20,9 +20,9 @@ localStorage.setItem(email, jsonUser);
 onEvent("login", ()=>{loginCuenta()})
 
 function loginCuenta(){
- let userLogin = localStorage.getItem(txtEmail.value);
+ let userLogin = localStorage.getItem(email.value);
  let obj = JSON.parse(userLogin)
- if(user.password == obj.password){
+ if(useregister.password == obj.password){
     return true;
  } else{
     return false;
