@@ -1,10 +1,23 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
-
+import fs, { readFile } from "fs"
+let  usuariosJson;
 
 onEvent("registro", ()=>{crearCuenta()})
+fs.readFile("./back/Usuarios.json", 'utf8', (err, jsonString) =>{
+    if(err){
+        console.log('Error al lleer el archivo:', err);
+        return;
+    }
+    try{
+        usuariosJson = JSON.parse(jsonString);
+        console.log(usuariosJson);
 
+    } catch(err){
+        console.log("Error al parsear JSON", err);
+    }
+})
 function crearCuenta(){
-    let checkeo = localStorage.getItem(email);
+    let checkeo = usuariosJson.getItem(email);
     if(checkeo == "null"){
     var usuario = {
     "email": email,
@@ -12,7 +25,7 @@ function crearCuenta(){
     "username": username 
 }
 var jsonUser = JSON.stringify(usuario);
-localStorage.setItem(email, jsonUser);
+usuariosJson.setItem(email, jsonUser);
     return true;
     } else {
         return false;
@@ -21,7 +34,7 @@ localStorage.setItem(email, jsonUser);
 onEvent("login", ()=>{loginCuenta()})
 
 function loginCuenta(){
- let userLogin = localStorage.getItem(email);
+ let userLogin = usuario.getItem(email);
  let obj = JSON.parse(userLogin)
  if(user.password == obj.password){
     return true;
