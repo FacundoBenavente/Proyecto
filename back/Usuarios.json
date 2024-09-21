@@ -1,6 +1,1 @@
-{"usuarios": {
-"Username": "" ,
-"E-mail": "" ,
-"Password": ""
-}
-}
+{"usuarios":["{\"email\":\"User@gmail.com\",\"password\":\"User123\",\"username\":\"User\"}","{\"email\":\"Facucrack@gmail.com\",\"password\":\"papasfritas\",\"username\":\"Facu\"}","{\"email\":\"ebenavente@gmail.com\",\"password\":\"Auritone\",\"username\":\"ezequiel\"}","{\"email\":\"manubenacrack@gmail.com\",\"password\":\"Manucho20p12\",\"username\":\"Manucho\"}","{\"email\":\"FeluchoGatoLoco@gmail.com\",\"password\":\"GatoDormilon\",\"username\":\"FeluchoGatoLoco\"}"]}

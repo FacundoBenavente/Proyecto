@@ -1,47 +1,44 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
-import fs, { readFile } from "fs"
-let  usuariosJson;
+import fs from "fs"
 
-onEvent("registro", ()=>{crearCuenta()})
-fs.readFile("./back/Usuarios.json", 'utf8', (err, jsonString) =>{
-    if(err){
-        console.log('Error al lleer el archivo:', err);
-        return;
-    }
-    try{
-        usuariosJson = JSON.parse(jsonString);
-        console.log(usuariosJson);
+onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
 
-    } catch(err){
-        console.log("Error al parsear JSON", err);
-    }
+onEvent("login", (data)=>{
+    const jsonData = fs.readFileSync("Usuarios.json" );        
+        const jsonUsers = JSON.parse(jsonData);        
+        for(let i = 0; i < jsonUsers.usuarios.length; i++){
+            const usr = JSON.parse(jsonUsers.usuarios[i]);
+            if (usr.email == data.user.email){
+                if(usr.password == data.user.password){
+                    return true;
+                } else {                    
+                    return false;                    
+                }                
+            }
+        }
+        return false;   
 })
-function crearCuenta(){
-    let checkeo = usuariosJson.getItem(email);
-    if(checkeo == "null"){
-    var usuario = {
-    "email": email,
-    "password": password,
-    "username": username 
-}
-var jsonUser = JSON.stringify(usuario);
-usuariosJson.setItem(email, jsonUser);
-    return true;
-    } else {
-        return false;
-    }
-}
-onEvent("login", ()=>{loginCuenta()})
 
-function loginCuenta(){
- let userLogin = usuario.getItem(email);
- let obj = JSON.parse(userLogin)
- if(user.password == obj.password){
+function crearCuenta(usuario){
+   
+    const jsonData = fs.readFileSync("Usuarios.json" )
+    const jsonUsers = JSON.parse(jsonData);        
+    const jsonUser = JSON.stringify(usuario.user);
+
+    for(let i = 0; i < jsonUsers.usuarios.length; i++){
+        const usr = JSON.parse(jsonUsers.usuarios[i]);
+        if (usr.email == usuario.user.email){
+            return false
+        }
+    }
+    jsonUsers.usuarios.push(jsonUser);
+    const data = JSON.stringify(jsonUsers);
+
+    fs.writeFileSync("Usuarios.json", data);
     return true;
- } else{
-    return false;
- } 
+    
 }
+  
 /*function crearCuenta2(){
     var usuario = {
         "email": txtEmail2.value,
@@ -53,4 +50,4 @@ var jsonUser = JSON.stringify(usuario);
 localStorage.setItem(txtEmail2.value, jsonUser);
     }*/
 
-    startServer()
+    startServer();

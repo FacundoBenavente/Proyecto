@@ -30,6 +30,8 @@ function Register2(){
 }
 
 function clickLogin(){
+
+
     if(submitBtn1.value == "Registrarse"){
         var email1 = txtEmail.value;
         var password1 = txtPass.value;
@@ -39,10 +41,17 @@ function clickLogin(){
             password: password1,
             username: username1
         }
-        let data = fetchData("registro", user)
-        if(data === false){
-            cuentaExiste()
-        }
+        console.log("registro post");
+
+        postData("registro",{user} ,(data) => {
+            
+            if(!data){
+                cuentaExiste()
+            } else{
+                listo.hidden = true;
+            }
+        })
+        
     } else{
 
         var email1 = txtEmail.value;
@@ -51,12 +60,15 @@ function clickLogin(){
             email: email1,
             password: password1
         }
-       let data = fetchData("login", user)
-       if(data === true){
-        Logeado()
-       }else{
-           Incorrecto()
-       }
+        postData("login", {user}, (data) =>{
+            console.log(data);
+            if(data){
+                Logeado()
+               }else{
+                   Incorrecto()
+               }
+        })
+       
     }
     if(submitBtn2.value == "Registrarse"){
         var email2 = txtEmail2.value;
