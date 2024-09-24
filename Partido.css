@@ -10,22 +10,23 @@
   #Marcador{
     color: white;
     display: flex;
-    justify-content: space-evenly;
-  }
-  .marca{
-   font-size: 150px;
-  }
-  #guion{
-   margin-top: -10px;
+    justify-content: space-around;
+    font-size: 150px;
+    margin-bottom: 130px;
   }
   #Countdown{
     background-color: white;
+    border-radius: 60px;
     display: inline-flex;
-    padding: 40px 10px 0px 20px;
+    padding: 10px 20px 10px 20px;
     justify-content: flex-end;
     align-items: center;
+    flex-shrink: 0;
   }
   #count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #000;
 
     font-family: Inter;
@@ -37,7 +38,7 @@
     height: 90px;
   }
   body {
-    background: #539733;
+    background: url("./imgs/PartidoFondo.png") #539733 100% / cover no-repeat;
     }
 .Finalmsj{
     color: white;

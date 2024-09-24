@@ -1,14 +1,23 @@
     body {
-      background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
-    }
-    button{
-      cursor: pointer;
+      background: linear-gradient(to right, #3D7125 50%, #82DA59 50%);
     }
      #AboutTxtBox{
       width: 40%;
         margin-right: auto; 
       }
-    #atras_about{
-      border: none;
-    }
-  
+      h3{
+        color: #FFF;
+      font-family: Inter;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+      }
+      h1{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }

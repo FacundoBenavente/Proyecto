@@ -24,7 +24,7 @@ button{
   }
   h6{
     cursor: pointer;
-    color: #d2c6c6;
+    color: white;
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-style: normal;
@@ -32,7 +32,7 @@ button{
     line-height: normal;
   }
   h6:hover{
-  color: white    
+  font-weight: 600;
   }
 
   .submitBtn{
@@ -59,9 +59,14 @@ button{
   label{
     color: white;
     margin-left: 10%;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
   body {
-    background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
+    background: linear-gradient(to right, #539733 50%, #82DA59 50%);
   }
   .txtbox{
     border-right: none;
@@ -80,27 +85,27 @@ button{
     overflow: auto;
   }
   #txtEmail{
-    background-color: #5D59FF;
+    background-color: #539733;
     color:white;
   }
   #txtPass{
-    background-color: #5D59FF;
+    background-color: #539733;
     color:white;
   }
   #txtName{
-    background-color: #5D59FF;
+    background-color: #539733;
     color:white;
   }
   #txtEmail2{
-    background-color: #FF4D4D;
+    background-color: #82DA59;
     color:white;
   }
   #txtPass2{
-    background-color: #FF4D4D;
+    background-color: #82DA59;
     color: white;
   }
   #txtName2{
-    background-color: #FF4D4D;
+    background-color: #82DA59;
     color: white;
   }
   .msjListo{

@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(to right, #539733 50%, #82DA59 50%);
+  }
+  h1{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 40px;
+  }
+  #AboutTxtBox{
+    width: 40%;
+      margin-right: auto; 
+    }
+    li{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    ol{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 350;
+        line-height: normal;
+    }

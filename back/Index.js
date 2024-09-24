@@ -38,16 +38,6 @@ function crearCuenta(usuario){
     return true;
     
 }
-  
-/*function crearCuenta2(){
-    var usuario = {
-        "email": txtEmail2.value,
-        "password": txtPass2.value,
-        "username": txtName2.value
-        }
 
-var jsonUser = JSON.stringify(usuario);
-localStorage.setItem(txtEmail2.value, jsonUser);
-    }*/
 
     startServer();
