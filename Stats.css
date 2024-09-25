@@ -1,16 +1,19 @@
 
   .Stats{
     display: inline-flex;
-    padding: 50px 45px 90px 65px;
+    padding: 0px 50px 100px 100px;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    background-color: gray;
   }
   .statbox{
     border-radius: 100px;
     background: #82DA59;
     width: 500px;
     height: 400px;
+    padding: 0px 100px 220px 100px;
+
   }
   body {
     background: #3D7125;
@@ -18,18 +21,96 @@
     justify-content: space-around;
   }
   .Titulo{
-      color: white;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
+
   button{
     cursor: pointer;
-    width: 200px;
-    height: 70px;
+    width: 250px;
+    height: 60px;
     border: none;
     margin-left: 10%;
     border-radius: 20px;
     background-color: white;
-    font-size: 20px;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
     }
     button:hover{
       background-color: #cfcaca;
+    }
+    .partidosBox{
+      background-color: white;
+      height: 100px;
+      width: 500px;
+      border-radius: 20px;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 20px 20px 7px 15px;
+    }
+    .partidostxt{
+      color: #333;
+    font-family: Inter;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    }
+    h1{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+    .otherBoxes{
+      background-color: white;
+      height: 50px;
+      width: 500px;
+      border-radius: 20px;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 10px 20px 4px 15px;
+    }
+    .othertxt{
+      color: #333;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    }
+    .mayorBox{
+    background-color: white;
+    width: 210px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    padding: 10px 20px 0px 15px;
+    }
+    .mayortxt{
+      color: #333;
+      font-family: Inter;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .mayorYbutton{
+      display: flex;
+      flex-direction: row;
+    }
+    .mayor{
+      margin-right: 10px;
     }

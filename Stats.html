@@ -7,32 +7,78 @@
   <title>Futbots</title>
   <link href="Stats.css" rel="stylesheet" type="text/css" />
   <script src="Stats.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="Stats">
-     <h1 class="Titulo">Jugador 1</h1>
+    <div class= "nombres">
+     <h1 class="Titulo">JUGADOR 1</h1>
      <span>@nombredeusuario</span>
+     </div>
      <div class= "statbox">
-      <h1>Cantidad de Partidos:</h1>
-      <h1>Cant Ganados:</h1>
-      <h1>Cant Perdidos:</h1>
-      <h1>Mayor victoria:</h1>
-      <button onclick="Button1()">Ok</button>
+      <h1 class= "partidos">CANTIDAD DE PARTIDOS:</h1>
+      <div class= "partidosBox">
+        <span class="partidostxt">0</span>
+      </div>
+      <h1>PARTIDOS GANADOS</h1>
+      <div class= "otherBoxes">
+        <span class = "othertxt">0</span>
+      </div>
+      <h1>PARTIDOS PERDIDOS</h1>
+      <div class= "otherBoxes">
+        <span class = "othertxt">0</span>
+      </div>
+      <div class= "mayorYbutton">
+        <div class="mayor">
+      <h1>MAYOR VICTORIA</h1>
+      <div class="mayorBox">
+        <span class= "mayortxt">0-0</span>
+      </div>
+      </div>
+      <div class="comienzo">
+      <h1 class="comienzotxt">¿COMENZAMOS?</h1>
+      <button onclick="Button2()">OK</button>
+      </div>
+      </div>
       </div>
     </div>
 
     <div class = "Stats">
-      <h1 class="Titulo">Jugador 2</h1>
+      <h1 class="Titulo">JUGADOR 2</h1>
       <span>@nombredeusuario</span>
       <div class = "statbox">
-      <h1>Cantidad de Partidos:</h1>
-      <h1>Cant Ganados:</h1>
-      <h1>Cant Perdidos:</h1>
-      <h1>Mayor victoria:</h1>
-      <button onclick="Button2()">Ok</button>
+      <h1 class= "partidos">CANTIDAD DE PARTIDOS:</h1>
+      <div class= "partidosBox">
+        <span class="partidostxt">0</span>
+      </div>
+      <h1>PARTIDOS GANADOS</h1>
+      <div class= "otherBoxes">
+        <span class = "othertxt">0</span>
+      </div>
+      <h1>PARTIDOS PERDIDOS</h1>
+      <div class= "otherBoxes">
+        <span class = "othertxt">0</span>
+      </div>
+      <div class= "mayorYbutton">
+        <div class="mayor">
+      <h1>MAYOR VICTORIA</h1>
+      <div class="mayorBox">
+        <span class= "mayortxt">0-0</span>
+      </div>
+      </div>
+      <div class="comienzo">
+      <h1 class="comienzotxt">¿COMENZAMOS?</h1>
+      <button onclick="Button2()">OK</button>
+      </div>
+      </div>
     </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+<script src="socket.js"></script>
 </body>
 </html>
