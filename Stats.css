@@ -1,24 +1,24 @@
 
   .Stats{
     display: inline-flex;
-    padding: 0px 50px 100px 100px;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    background-color: gray;
+    margin-top: 0px;
   }
   .statbox{
-    border-radius: 100px;
+    border-radius: 100px 100px 0px 0px;
     background: #82DA59;
-    width: 500px;
-    height: 400px;
-    padding: 0px 100px 220px 100px;
-
+    width:453px;
+    height: 293px;
+    padding: 0px 110px 225px 120px;
+    margin-left: 0px;
   }
   body {
+    margin: 0px;
     background: #3D7125;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
   }
   .Titulo{
     color: #FFF;
@@ -27,17 +27,29 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 0px;
   }
-
+  .usertxt{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 10x;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+  }
+  .nombres{
+    text-align: center;
+    height: 123px;
+  }
   button{
     cursor: pointer;
-    width: 250px;
+    width: 200px;
     height: 60px;
     border: none;
     margin-left: 10%;
     border-radius: 20px;
-    background-color: white;
     font-size: 30px;
+    background-color: white;
     color: #000;
     text-align: center;
     font-family: Inter;
@@ -49,14 +61,15 @@
     button:hover{
       background-color: #cfcaca;
     }
+
     .partidosBox{
       background-color: white;
-      height: 100px;
-      width: 500px;
+      height: 80px;
+      width: 450px;
       border-radius: 20px;
       align-items: center;
       flex-shrink: 0;
-      padding: 20px 20px 7px 15px;
+      padding: 15px 15px 15px 15px;
     }
     .partidostxt{
       color: #333;
@@ -69,7 +82,7 @@
     h1{
     color: #FFF;
     font-family: Inter;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -77,7 +90,7 @@
     .otherBoxes{
       background-color: white;
       height: 50px;
-      width: 500px;
+      width: 450px;
       border-radius: 20px;
       align-items: center;
       flex-shrink: 0;
@@ -93,7 +106,7 @@
     }
     .mayorBox{
     background-color: white;
-    width: 210px;
+    width: 220px;
     height: 50px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -113,4 +126,10 @@
     }
     .mayor{
       margin-right: 10px;
+    }
+    .textosStat{
+      margin-left: 20px;
+    }
+    .comienzotxt{
+      margin-left: 40px;
     }

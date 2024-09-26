@@ -1,6 +1,6 @@
 var logeado1 = false;
 var logeado2 = false;
-
+let logeados = [];
 function Register1(){
     if(submitBtn1.value == "Login"){
     submitBtn1.value = "Registrarse";
@@ -59,6 +59,8 @@ function clickLogin(){
         }
         postData("login", {user}, (data) =>{
             if(data){
+                logeados[0] = user.email;
+                console.log(logeados);
                 Logeado();
                }else{
                    Incorrecto()
@@ -95,6 +97,8 @@ function clickLogin2(){
         }
         postData("login", {user}, (data) =>{
             if(data){
+                logeados[1] =user.email;
+                console.log(logeados);
                 Logeado2();
                }else{
                    Incorrecto2()
@@ -148,5 +152,7 @@ function cuentaExiste2(){
 function checkButtons() {
     if(logeado1 === true && logeado2 === true){
         window.location = "Stats.html";
+        alert(logeados);
+        postData("logeados",{logeados})
             }
     }

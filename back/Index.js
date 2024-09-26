@@ -35,9 +35,28 @@ function crearCuenta(usuario){
     const data = JSON.stringify(jsonUsers);
 
     fs.writeFileSync("Usuarios.json", data);
-    return true;
-    
+    return true;   
 }
+    onEvent("logeados",(logeados) =>{return buscaUsuario(logeados)})
 
+
+    function buscaUsuario(logeados){
+        let usuariosName = [];
+        const jsonData = fs.readFileSync("Usuarios.json" )
+        const jsonUsers = JSON.parse(jsonData);        
+
+    for(let i = 0; i < jsonUsers.usuarios.length; i++){
+        const usr = JSON.parse(jsonUsers.usuarios[i]);
+        if (logeados[0] == usr.email){
+            usuariosName[0] = usr.username;
+          //  console.log(usuariosName);
+        } else if(logeados[1] == usr.email)
+        usuariosName[1] = usr.username;
+       // console.log(usuariosName);
+    }
+    console.log(usuariosName);
+    console.log(logeados);
+    return usuariosName;   
+}
 
     startServer();
