@@ -1,6 +1,12 @@
 var boton1 = false;
 var boton2 = false;
 
+const logeados = localStorage.getItem('logeados');
+const UsrLog = JSON.parse(logeados);
+window.username1.innerHTML = "@" + UsrLog[0];
+window.username2.innerHTML = "@" + UsrLog[1];
+
+
 function Button1(){
 if(boton1 === false){
 boton1 = true;
@@ -28,4 +34,3 @@ if(boton1 === true && boton2 === true){
         }
 }
 
-fetchData("username", )

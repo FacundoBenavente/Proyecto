@@ -37,7 +37,7 @@ function crearCuenta(usuario){
     fs.writeFileSync("Usuarios.json", data);
     return true;   
 }
-    onEvent("logeados",(logeados) =>{return buscaUsuario(logeados)})
+    onEvent("loged",(logeados) =>{return buscaUsuario(logeados)})
 
 
     function buscaUsuario(logeados){
@@ -49,13 +49,9 @@ function crearCuenta(usuario){
         const usr = JSON.parse(jsonUsers.usuarios[i]);
         if (logeados[0] == usr.email){
             usuariosName[0] = usr.username;
-          //  console.log(usuariosName);
         } else if(logeados[1] == usr.email)
         usuariosName[1] = usr.username;
-       // console.log(usuariosName);
     }
-    console.log(usuariosName);
-    console.log(logeados);
     return usuariosName;   
 }
 

@@ -1,6 +1,8 @@
 var logeado1 = false;
 var logeado2 = false;
 let logeados = [];
+let logedusr = [];
+
 function Register1(){
     if(submitBtn1.value == "Login"){
     submitBtn1.value = "Registrarse";
@@ -60,7 +62,6 @@ function clickLogin(){
         postData("login", {user}, (data) =>{
             if(data){
                 logeados[0] = user.email;
-                console.log(logeados);
                 Logeado();
                }else{
                    Incorrecto()
@@ -98,7 +99,6 @@ function clickLogin2(){
         postData("login", {user}, (data) =>{
             if(data){
                 logeados[1] =user.email;
-                console.log(logeados);
                 Logeado2();
                }else{
                    Incorrecto2()
@@ -149,10 +149,14 @@ function cuentaExiste2(){
     listo2.hidden = false;
     listo2.innerHTML = "Tu cuenta ya existe";
 }
+
 function checkButtons() {
     if(logeado1 === true && logeado2 === true){
+        postData("loged", logeados, (usuariosName)=>{
+            logedusr[0] = usuariosName[0];
+            logedusr[1] = usuariosName[1];
+            localStorage.setItem("logeados", JSON.stringify(logedusr));
+        })
         window.location = "Stats.html";
-        alert(logeados);
-        postData("logeados",{logeados})
             }
     }

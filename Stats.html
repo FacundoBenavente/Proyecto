@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Futbots</title>
   <link href="Stats.css" rel="stylesheet" type="text/css" />
-  <script src="Stats.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
@@ -17,7 +16,7 @@
   <div class="Stats">
     <div class= "nombres">
      <h1 class="Titulo">JUGADOR 1</h1>
-     <span class = "usertxt">@nombredeusuario</span>
+     <span class = "usertxt" id = "username1">@nombredeusuario</span>
      </div>
      <div class= "statbox">
       <h1 class="textosStat">CANTIDAD DE PARTIDOS:</h1>
@@ -50,7 +49,7 @@
     <div class = "Stats">
       <div class = "nombres">
       <h1 class="Titulo">JUGADOR 2</h1>
-      <span class = "usertxt">@nombredeusuario</span>
+      <span class = "usertxt" id = "username2">@nombredeusuario</span>
       </div>
       <div class = "statbox">
       <h1 class="textosStat">CANTIDAD DE PARTIDOS:</h1>
@@ -82,5 +81,6 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 <script src="socket.js"></script>
+<script src="Stats.js"></script>
 </body>
 </html>
