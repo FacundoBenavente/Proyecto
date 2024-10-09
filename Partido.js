@@ -41,16 +41,33 @@ function gol(mensaje){
     count.innerHTML = minutos + ":" + "0" + segundos_muestra;
     }
     if(segundos==0 && minutos == 0){
-
+      let usuarios = JSON.parse(localStorage.getItem("logeados"));
       msjFinal.hidden = false;
       if(usgol1 > usgol2){
-          msjWin.innerHTML = "Ganó el usuario 1";
+        ganador = usuarios[0];
+          msjWin.innerHTML = "Ganó " + ganador;
           msjWin.hidden = false;
-            ganador = "usuario 1";
+          let resultado = usgol1 + "-" + usgol2;
+          postData("ganadorPartido", {ganador}, (usuarioExiste)=>{
+          if(!usuarioExiste){
+            let usuario = {
+              "user": ganador,
+              "goles": usgol1,
+              "wins": 1,
+              "looses": 0,
+              "mayorVictoria": resultado
+          }
+          postData("crearStatsWin",{usuario});
+        }
+      }
+          );
+
+        //almacenar goles, victorias++, partiduosJug++ y comprobar mayor victoria
       } else if(usgol2 > usgol1){
-          msjWin.innerHTML = "Ganó el usuario 2";
+          ganador = usuarios[1];
+          msjWin.innerHTML = "Ganó "+ ganador;
           msjWin.hidden = false;
-            ganador = "usuario 2";
+          //almacenar goles, derrotas++ y partiduosJug++
       } else if(usgol1 == usgol2){
           msjWin.innerHTML = "Empate";
           msjWin.hidden = false;
