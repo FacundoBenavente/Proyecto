@@ -55,9 +55,21 @@ function gol(mensaje){
               "goles": usgol1,
               "wins": 1,
               "looses": 0,
-              "mayorVictoria": resultado
+              "mayorVictoria": resultado,
+              "partidos": 1,
+              "diferenciaGol": usgol1-usgol2
           }
           postData("crearStatsWin",{usuario});
+        } else{
+          let usuario = {
+            "user": ganador,
+            "goles": usgol1,
+            "wins": 1,
+            "mayorVictoria": resultado,
+            "partidos": 1,
+            "diferenciaGol": usgol1-usgol2
+        }
+          postData("buscaStatsWin",{usuario});
         }
       }
           );

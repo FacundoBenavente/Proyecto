@@ -1,5 +1,6 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
-import fs from "fs"
+import fs, { writeFileSync } from "fs"
+import { on } from "events";
 
 onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
 
@@ -80,14 +81,38 @@ let usExiste = false;
     
         onEvent("crearStatsWin",(usuarioSts) =>{crearStats(usuarioSts)})
         function crearStats(usuarioSts){
-            const jsonData = fs.readFileSync("Stats.json" )
+
+            const jsonData = fs.readFileSync("Stats.json")
             const jsonUsers = JSON.parse(jsonData);        
-            const jsonUser = JSON.stringify(usuarioSts.user);
+            const jsonUser = JSON.stringify(usuarioSts);
 
             jsonUsers.usuarios.push(jsonUser);
             const data = JSON.stringify(jsonUsers);
-        
             fs.writeFileSync("Stats.json", data);
-            console.log(usuarioSts);
         }
+        onEvent("buscaStatsWin",(Usersuma)=>{return buscaStatWin(Usersuma)})
+        function buscaStatWin(Usersuma){
+            const jsonData = fs.readFileSync("Stats.json" )
+            const jsonUsers = JSON.parse(jsonData);       
+            console.log(UserSuma);
+        for(let i = 0; i < jsonUsers.usuarios.length; i++){
+            const usr = JSON.parse(jsonUsers.usuarios[i]);
+            let newStat = usr;
+            console.log(newStat);
+            if (Usersuma.user == usr.user){
+                newStat.goles = usr.goles + Usersuma.goles;
+                newStat.partidos = usr.partidos + Usersuma.partidos;
+                newStat.wins = usr.wins + Usersuma.wins;
+                if(newStat.diferenciaGol < Usersuma.diferenciaGol){
+                    newStat.diferenciaGol = Usersuma.diferenciaGol;
+                }
+                console.log(newStat);
+                const jsonUser = JSON.stringify(newStat);
+                 jsonUsers.usuarios[i] = jsonUser;
+                console.log(jsonUsers)
+            }   
+        }
+        const data = JSON.stringify(jsonUsers);
+        writeFileSync("Stats.json",data);
+    }
     startServer();
