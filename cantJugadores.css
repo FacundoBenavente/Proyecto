@@ -1,25 +1,17 @@
-button{
-    cursor: pointer;
-    border: none;
-    width: 280px;
-    height: 120px;
-    margin: 2%;
-    transition-duration: 0.4s;
-  }
-    .rojo{
-      color: white;
-      background-color: #f45757;
-    }
-    .rojo:hover{
-      background-color: #ff3838;
-    }
-    .azul{
-      color: white;
-      background-color: #6b6bff;
-    }
-    .azul:hover{
-      background-color: #3737fb;
-    }
+    .button{
+        cursor: pointer;
+        width: 250px;
+        height: auto;
+        margin: 30px;
+        transition-duration: 0.4s;
+      }
+      .button:hover{
+        cursor: pointer;
+        width: 260px;
+        height: auto;
+        margin: 30px;
+        transition-duration: 0.4s;
+      }
     h1{
       color: white;
       margin-top: 15px;
@@ -44,15 +36,18 @@ button{
       width:auto;
       height: 80px;
       padding: 8px;
-      background-color: #282323;
-      margin-bottom: 100px;
+      background-color: #3D7125;
+      margin-bottom: 20px;
       display: flex;
       justify-content: flex-start;
     }
     body{
       margin: 0px;
+       background-color: #82DA59;
+       background: url(./Imgs/Fondo_futbots.png) #82DA59 50% / cover no-repeat;
     }
-    img{
-      height: 80px;
-      width: 280px;
+    .logoImg{
+      margin-top: 5px;
+      height: 80%;
+      width: 330px;
     }

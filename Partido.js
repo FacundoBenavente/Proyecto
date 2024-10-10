@@ -65,6 +65,7 @@ function gol(mensaje){
             "user": ganador,
             "goles": usgol1,
             "wins": 1,
+            "looses": 0,
             "mayorVictoria": resultado,
             "partidos": 1,
             "diferenciaGol": usgol1-usgol2

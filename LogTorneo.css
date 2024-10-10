@@ -1,13 +1,13 @@
 
-    body {
-      background: linear-gradient(to right, #5D59FF 50%, #FF4D4D 50%);
-    }
+  body {
+    background: linear-gradient(to right, #539733 50%, #82DA59 50%);
+  }
     h1{
       color:white;
       margin-bottom: 10%;
       font-family: "Inter", sans-serif;
       font-size: 40px;
-      font-weight: 400;
+      font-weight: 600;
       font-style: normal;
       line-height: normal;
     }
@@ -30,7 +30,7 @@
       background-color: #e7e4e4;
     }
     .txtbox{
-      background-color:#5D59FF;
+      background-color:#539733;
       border-right: none;
       border-left: none;
       border-top: none;
@@ -56,10 +56,15 @@
     label{
       color: white;
       margin-left: 10%;
+      font-family: Inter;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
     }
     h6{
       cursor: pointer;
-      color: #d2c6c6;
+      color: white;
       font-family: "Inter", sans-serif;
       font-size: 15px;
       font-style: normal;
@@ -67,6 +72,6 @@
       line-height: normal;
     }
     h6:hover{
-    color: white    
+      font-weight: 600;      
     }
   

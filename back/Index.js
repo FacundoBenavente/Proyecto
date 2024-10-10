@@ -62,12 +62,11 @@ function crearCuenta(usuario){
 let usExiste = false;
         onEvent("ganadorPartido",(ganador) =>{return checkUsStats(ganador)});
         function checkUsStats(ganador){
-            const jsonData = fs.readFileSync("Stats.json");
-            const jsonUsers = JSON.parse(jsonData);     
-            if(jsonUsers.usuarios.length > 0){   
-        for(let i = 0; i < jsonUsers.usuarios.length; i++){
-            const usr = JSON.parse(jsonUsers.usuarios[i]);
-            if (ganador == usr.user){
+            let jsonData = JSON.parse(fs.readFileSync("Stats.json"));
+            if(jsonData.usuarios.length > 0){   
+        for(let i = 0; i < jsonData.usuarios.length; i++){
+            const usr = JSON.parse(jsonData.usuarios[i]);
+            if (ganador.ganador == usr.usuario.user){
                 usExiste = true;
             } else{
                 usExiste = false;
@@ -76,8 +75,8 @@ let usExiste = false;
     }else{
         usExiste = false;
     }
-        return usExiste;   
-        }
+    return usExiste;
+}
     
         onEvent("crearStatsWin",(usuarioSts) =>{crearStats(usuarioSts)})
         function crearStats(usuarioSts){
@@ -94,22 +93,20 @@ let usExiste = false;
         function buscaStatWin(Usersuma){
             const jsonData = fs.readFileSync("Stats.json" )
             const jsonUsers = JSON.parse(jsonData);       
-            console.log(UserSuma);
         for(let i = 0; i < jsonUsers.usuarios.length; i++){
             const usr = JSON.parse(jsonUsers.usuarios[i]);
             let newStat = usr;
-            console.log(newStat);
-            if (Usersuma.user == usr.user){
-                newStat.goles = usr.goles + Usersuma.goles;
-                newStat.partidos = usr.partidos + Usersuma.partidos;
-                newStat.wins = usr.wins + Usersuma.wins;
-                if(newStat.diferenciaGol < Usersuma.diferenciaGol){
-                    newStat.diferenciaGol = Usersuma.diferenciaGol;
+            if (Usersuma.usuario.user == usr.usuario.user){
+                newStat.usuario.goles = usr.usuario.goles + Usersuma.usuario.goles;
+                newStat.usuario.partidos = usr.usuario.partidos + Usersuma.usuario.partidos;
+                newStat.usuario.wins = usr.usuario.wins + Usersuma.usuario.wins;
+                newStat.usuario.looses = usr.usuario.looses + Usersuma.usuario.looses;
+                if(newStat.usuario.diferenciaGol < Usersuma.usuario.diferenciaGol){
+                    newStat.usuario.diferenciaGol = Usersuma.usuario.diferenciaGol;
+                    newStat.usuario.mayorVictoria = Usersuma.usuario.mayorVictoria;
                 }
-                console.log(newStat);
                 const jsonUser = JSON.stringify(newStat);
                  jsonUsers.usuarios[i] = jsonUser;
-                console.log(jsonUsers)
             }   
         }
         const data = JSON.stringify(jsonUsers);
