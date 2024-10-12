@@ -43,10 +43,22 @@ function gol(mensaje){
     if(segundos==0 && minutos == 0){
       let usuarios = JSON.parse(localStorage.getItem("logeados"));
       msjFinal.hidden = false;
+    
+      let  resultado = {
+        "users":  usuarios,
+        "goles": [usgol1,usgol2]
+      }
+        
+
+
+
+      postData("setResultado", {resultado}, (usuarioExiste)=>{})
+
+
       if(usgol1 > usgol2){
-        ganador = usuarios[0];
+//        ganador = usuarios[0];
           msjWin.innerHTML = "Ganó " + ganador;
-          msjWin.hidden = false;
+  /*        msjWin.hidden = false;
           let resultado = usgol1 + "-" + usgol2;
           postData("ganadorPartido", {ganador}, (usuarioExiste)=>{
           if(!usuarioExiste){
@@ -73,7 +85,7 @@ function gol(mensaje){
           postData("buscaStatsWin",{usuario});
         }
       }
-          );
+          ); */
 
         //almacenar goles, victorias++, partiduosJug++ y comprobar mayor victoria
       } else if(usgol2 > usgol1){

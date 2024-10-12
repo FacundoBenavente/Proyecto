@@ -1,6 +1,7 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs, { writeFileSync } from "fs"
 import { on } from "events";
+import { stringify } from "querystring";
 
 onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
 
@@ -27,7 +28,7 @@ function crearCuenta(usuario){
 
     for(let i = 0; i < jsonUsers.usuarios.length; i++){
         const usr = JSON.parse(jsonUsers.usuarios[i]);
-        if (usr.email == usuario.user.email){
+        if (usr.email == usuario.user.email || usr.username == usuario.user.username){
             return false
         }
     }
@@ -58,58 +59,89 @@ function crearCuenta(usuario){
 
 
 
+
+
 //partido
-let usExiste = false;
-        onEvent("ganadorPartido",(ganador) =>{return checkUsStats(ganador)});
-        function checkUsStats(ganador){
-            let jsonData = JSON.parse(fs.readFileSync("Stats.json"));
-            if(jsonData.usuarios.length > 0){   
-        for(let i = 0; i < jsonData.usuarios.length; i++){
-            const usr = JSON.parse(jsonData.usuarios[i]);
-            if (ganador.ganador == usr.usuario.user){
-                usExiste = true;
-            } else{
-                usExiste = false;
-        }
-    } 
-    }else{
-        usExiste = false;
-    }
-    return usExiste;
-}
-    
-        onEvent("crearStatsWin",(usuarioSts) =>{crearStats(usuarioSts)})
-        function crearStats(usuarioSts){
 
-            const jsonData = fs.readFileSync("Stats.json")
-            const jsonUsers = JSON.parse(jsonData);        
-            const jsonUser = JSON.stringify(usuarioSts);
 
-            jsonUsers.usuarios.push(jsonUser);
-            const data = JSON.stringify(jsonUsers);
-            fs.writeFileSync("Stats.json", data);
-        }
-        onEvent("buscaStatsWin",(Usersuma)=>{return buscaStatWin(Usersuma)})
-        function buscaStatWin(Usersuma){
-            const jsonData = fs.readFileSync("Stats.json" )
-            const jsonUsers = JSON.parse(jsonData);       
-        for(let i = 0; i < jsonUsers.usuarios.length; i++){
-            const usr = JSON.parse(jsonUsers.usuarios[i]);
-            let newStat = usr;
-            if (Usersuma.usuario.user == usr.usuario.user){
-                newStat.usuario.goles = usr.usuario.goles + Usersuma.usuario.goles;
-                newStat.usuario.partidos = usr.usuario.partidos + Usersuma.usuario.partidos;
-                newStat.usuario.wins = usr.usuario.wins + Usersuma.usuario.wins;
-                newStat.usuario.looses = usr.usuario.looses + Usersuma.usuario.looses;
-                if(newStat.usuario.diferenciaGol < Usersuma.usuario.diferenciaGol){
-                    newStat.usuario.diferenciaGol = Usersuma.usuario.diferenciaGol;
-                    newStat.usuario.mayorVictoria = Usersuma.usuario.mayorVictoria;
+                function getUsuario(username){
+                    let jsonData = JSON.parse(fs.readFileSync("Stats.json"));
+                    if(jsonData.usuarios.length > 0){   
+                    for(let i = 0; i < jsonData.usuarios.length; i++){
+                        const usr = JSON.parse(jsonData.usuarios[i]);
+                        if (usr.user==username)            
+                            return i             
+                    }
+                    return -1
+                    }
                 }
-                const jsonUser = JSON.stringify(newStat);
-                 jsonUsers.usuarios[i] = jsonUser;
-            }   
-        }
-        const data = JSON.stringify(jsonUsers);
-        writeFileSync("Stats.json",data);
-    }
+                
+            onEvent("setResultado", (resultado)=>{setResultado(resultado)})
+            
+            function setResultado(data){
+
+                const jsonData = fs.readFileSync("Stats.json")
+                const jsonStat = JSON.parse(jsonData);    
+                console.log(data.resultado);
+
+                let posUsr1 = getUsuario(data.resultado.users[0]) 
+                let posUsr2 = getUsuario(data.resultado.users[1]) 
+                let posUsr = [posUsr1, posUsr2];
+
+                for(let i = 0; i < posUsr.length; i++){
+                    let contrario = 0;
+                    if(i == 0){
+                        contrario = 1
+                    }
+                if (posUsr[i] >= 0){
+                    let usu = JSON.parse(jsonStat.usuarios[posUsr[i]])  
+                    usu.goles =  usu.goles + data.resultado.goles[i]
+                    usu.partidos ++;
+
+                    if(data.resultado.goles[i] > data.resultado.goles[contrario]){
+                        usu.wins ++;
+                        if(usu.diferenciaGol < data.resultado.goles[i] - data.resultado.goles[contrario]){
+                            usu.diferenciaGol = data.resultado.goles[i] - data.resultado.goles[contrario];
+                            usu.mayorVictoria = data.resultado.goles[i] + "-" + data.resultado.goles[contrario];
+                        }
+                    } else if(data.resultado.goles[i] < data.resultado.goles[contrario]){
+                        usu.looses ++;
+                    }
+                    jsonStat.usuarios[posUsr[i]] = JSON.stringify(usu);
+                } else {
+                    let gana = 0;
+                    let pierde = 0;
+                    let bestWin;
+                    let difGol = 0; 
+                     if(data.resultado.goles[i] > data.resultado.goles[contrario]){
+                        gana = 1;
+                        difGol = data.resultado.goles[i] - data.resultado.goles[contrario];
+                        bestWin = data.resultado.goles[i] +"-" +data.resultado.goles[contrario];
+                        pierde = 0;
+                    } else if(data.resultado.goles[i] < data.resultado.goles[contrario]){
+                        gana = 0;
+                        difGol = 0;
+                        bestWin = "0-0";
+                        pierde = 1;
+                    }
+                    let usuario = {
+                        user: data.resultado.users[i],
+                        goles: data.resultado.goles[i],
+                        wins: gana,
+                        looses: pierde,
+                        mayorVictoria: bestWin, 
+                        partidos: 1,
+                        diferenciaGol: difGol
+                    }
+                    let ustat = JSON.stringify(usuario);
+                    jsonStat.usuarios.push(ustat);
+
+                }
+
+            }
+
+            const graba = JSON.stringify(jsonStat);
+            console.log(jsonStat);
+            fs.writeFileSync("Stats.json", graba);
+            }
     startServer();
