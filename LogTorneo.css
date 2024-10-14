@@ -31,6 +31,7 @@
     }
     .txtbox{
       background-color:#539733;
+      color: white;
       border-right: none;
       border-left: none;
       border-top: none;
@@ -74,4 +75,6 @@
     h6:hover{
       font-weight: 600;      
     }
-  
+    .msjListo{
+      color: white;
+    }

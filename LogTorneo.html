@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <script src="LogTorneo.js"></script>
 </head>
 
 <body>
@@ -22,15 +21,19 @@
         <label hidden for="username" id="userName">User name</label>
         <input type="hidden" id= "txtName" name="txtName" class="txtbox"/>
       <label for="Email">E-mail</label><br>
-        <input type="email" id="user-email" name="userEmail" class="txtbox" /> 
+        <input type="email" id="userEmail" name="userEmail" class="txtbox" /> 
   <br><br>
       <label for="Password">Contraseña:</label><br>
-      <input type="text" id="Contraseña" name="Contraseña2" class="txtbox"><br><br>
+      <input type="password" id="Contraseña" name="Contraseña2" class="txtbox"><br><br>
       <div class="centrado">
-      <input id= "submitBtn"class = "submit_Btn" type="submit" value="Login">
+      <input onclick = "clickLogin()" id= "submitBtn"class = "submit_Btn" type="button" value="Login">
       <h6 onclick="Register()" id="registrarse">¿No tienes cuenta? Registrate</h6>
+      <h1 hidden class="msjListo" id="listo">¡Listo!</h1>
         </div>
       </form>
   </div>
+  <script src="LogTorneo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+  <script src="socket.js"></script>
 </body>
 </html>

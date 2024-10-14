@@ -1,21 +1,25 @@
-var resets;
+let cantidadAlogear = 0;
 
 function goLogTorneo1(){
+    cantidadAlogear = 2;
+    window.localStorage.setItem("cantidadLog",JSON.stringify(cantidadAlogear));
     window.location = "LogTorneo.html";
-    resets = 2;
   }
 
   function goLogTorneo2(){
+    cantidadAlogear = 4;
+    window.localStorage.setItem("cantidadLog",JSON.stringify(cantidadAlogear));
     window.location = "LogTorneo.html";
-    resets = 4;
   }
 
   function goLogTorneo3(){
+    cantidadAlogear = 8;
+    window.localStorage.setItem("cantidadLog",JSON.stringify(cantidadAlogear));
     window.location = "LogTorneo.html";
-    resets = 8;
   }
 
   function goLogTorneo4(){
+    cantidadAlogear = 16;
+    window.localStorage.setItem("cantidadLog",JSON.stringify(cantidadAlogear));
     window.location = "LogTorneo.html";
-    resets = 16;
   }
