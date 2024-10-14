@@ -57,9 +57,33 @@ function crearCuenta(usuario){
     return usuariosName;   
 }
 
+            onEvent("buscaStats",(data) => {return buscaStats(data)})
 
+            function buscaStats(data){
+                const jsonData = fs.readFileSync("Stats.json")
+                const jsonStat = JSON.parse(jsonData);    
 
-
+                let usrPos1 = getUsuario(data.UsrLog[0]);
+                let usrPos2 = getUsuario(data.UsrLog[1]);
+                let usrPos = [usrPos1, usrPos2];
+                let usuarioStats =[];
+                for(let i = 0; i<usrPos.length; i++){
+                    if (usrPos[i] >= 0){
+                    usuarioStats[i] = JSON.parse(jsonStat.usuarios[usrPos[i]]); 
+                } else {
+                    let noStatUsr = {
+                       "user": data.UsrLog[i],
+                       "goles": 0,
+                       "wins": 0,
+                       "looses": 0,
+                       "mayorVictoria": "0-0",
+                       "partidos": 0
+                    }
+                    usuarioStats[i] = noStatUsr;
+                }
+            }
+            return usuarioStats;
+        }
 
 //partido
 
@@ -82,7 +106,6 @@ function crearCuenta(usuario){
 
                 const jsonData = fs.readFileSync("Stats.json")
                 const jsonStat = JSON.parse(jsonData);    
-                console.log(data.resultado);
 
                 let posUsr1 = getUsuario(data.resultado.users[0]) 
                 let posUsr2 = getUsuario(data.resultado.users[1]) 

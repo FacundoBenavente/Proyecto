@@ -5,7 +5,18 @@ const logeados = localStorage.getItem('logeados');
 const UsrLog = JSON.parse(logeados);
 window.username1.innerHTML = "@" + UsrLog[0];
 window.username2.innerHTML = "@" + UsrLog[1];
-
+postData("buscaStats", {UsrLog}, (data) =>{
+    //usuario 1
+    window.partidosCant1.innerHTML = data[0].partidos
+    window.ganadosCant1.innerHTML = data[0].wins
+    window.perdidosCant1.innerHTML = data[0].looses
+    window.mayorWin1.innerHTML = data[0].mayorVictoria
+    // usuario 2
+    window.partidosCant2.innerHTML = data[1].partidos
+    window.ganadosCant2.innerHTML = data[1].wins
+    window.perdidosCant2.innerHTML = data[1].looses
+    window.mayorWin2.innerHTML = data[1].mayorVictoria
+})
 
 function Button1(){
 if(boton1 === false){
