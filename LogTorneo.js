@@ -75,6 +75,6 @@
             }
             function checkButtons() {
                 if(logeado === true ){
-                    window.location = "?.html";
+                    window.location = "agregarJugador.html";
                         }
                 }

@@ -1,0 +1,26 @@
+h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+body{
+    background-color: green;
+    margin: 0px;
+}
+.contieneJugs{
+    height: 560px;
+    background-color: lime;
+    border-radius: 75px 75px 0 0;
+}
+.addPlayer{
+    cursor: pointer;
+    display: flex;
+    justify-self: center;
+    align-items: flex-end;
+}
+.jugs{
+    background-color: white;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+}
