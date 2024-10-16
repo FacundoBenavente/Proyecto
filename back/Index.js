@@ -2,7 +2,7 @@ import { onEvent, sendEvent, startServer } from "soquetic";
 import fs, { writeFileSync } from "fs"
 import { on } from "events";
 import { stringify } from "querystring";
- import { SerialPort } from "serialport";
+// import { SerialPort } from "serialport";
 
 
 onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
@@ -171,6 +171,7 @@ function crearCuenta(usuario){
             }
 
             // partido + hard
+            /*
             const port = new SerialPort({
                 //Completar con el puerto correcto
                 path: "COM7",
@@ -181,5 +182,5 @@ function crearCuenta(usuario){
                 console.log(data)
                 sendEvent("jugador", {data});
               });
-
+                */
     startServer();

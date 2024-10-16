@@ -1,4 +1,4 @@
-          let logeado = false;
+        let logeado = false;
           function Register(){
                 if(title.innerHTML == "Login"){
                 submitBtn.value = "Registrarse";
@@ -75,6 +75,7 @@
             }
             function checkButtons() {
                 if(logeado === true ){
+                    
                     window.location = "agregarJugador.html";
                         }
                 }
