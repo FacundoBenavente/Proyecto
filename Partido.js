@@ -8,6 +8,15 @@ var ganador;
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
 });
+recieve("jugador", (data) =>{
+  if(data = "jugador1"){
+    usgol1 ++;
+    Us1.innerHTML = usgol1;
+  } else if(data = "jugador2"){
+    usgol2 ++;
+    Us2.innerHTML = usgol2;
+  }
+})
 
 function gol(mensaje){
     if(msjFinal.hidden == true){
