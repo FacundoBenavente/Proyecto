@@ -19,12 +19,27 @@ body{
     align-self: flex-end;
     position: fixed;
     right: 45%;
+    border: none;
+    background-color: white;
+    height: 25px;
+    width: 160px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-align: center;
+
+}
+.addPlayer:hover{
+    background-color: lightgray;
 }
 .jugs{
     background-color: white;
     height: 50px;
     width: 300px;
     border-radius: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 .contieneJugs{
     width: 100%;

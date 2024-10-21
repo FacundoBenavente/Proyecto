@@ -1,4 +1,6 @@
-        let logeado = false;
+       let logeados = [];
+       let logeadosTorneo = [];
+       let logeado = false;
           function Register(){
                 if(title.innerHTML == "Login"){
                 submitBtn.value = "Registrarse";
@@ -44,6 +46,7 @@
                     }
                     postData("login", {user}, (data) =>{
                         if(data){
+                            logeados[0] = user.email;
                             Logeado();
                         }else{
                             Incorrecto()
@@ -75,7 +78,19 @@
             }
             function checkButtons() {
                 if(logeado === true ){
-                    
+                    postData("loged", logeados, (usuariosName)=>{
+                        logeadosTorneo = JSON.parse(localStorage.getItem("logeadosTorneo"));
+                        if(logeadosTorneo == null){
+                            logeadosTorneo = [];
+                            logeadosTorneo[0] = usuariosName[0];
+                            localStorage.setItem("logeadosTorneo", JSON.stringify(logeadosTorneo));
+                        }else{
+                        let logdSave = usuariosName[0];
+                        logeadosTorneo.push(logdSave);     
+                        localStorage.setItem("logeadosTorneo", JSON.stringify(logeadosTorneo));
+                        }
+                    })
                     window.location = "agregarJugador.html";
+
                         }
                 }

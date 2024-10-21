@@ -1,39 +1,33 @@
 h1{
-    display: flex;
-    justify-content: center;
-  }
-  button{
-    cursor: pointer;
-    border: none;
-    width: 140px;
-    height: 50px;
-    color: #ffffff;
-    background-color: #e9dfdf;
-   
-  }
-  button:hover{
-    background-color: #a09898;
-    color: #ffffff;
-    transition-duration: 0.4s;
-  }
-  .Siguiente{
-    text-align: center;
-    margin-top: 10px;
-  }
-  .Caja_titulo{
-      width:auto;
-       height: 80px;
-       padding: 8px;
-       background-color: #f1ebeb;
-     }
-     body{
-       margin: 0px;
-     }
-     .TablaTorneo{
-       height: 250px;
-       width: 500px;
-       background-color: rgb(236, 221, 221);
-       margin-top: 10px;
-       display: flex;
-       justify-content: center;
-     }
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.semis{
+  background-color: lime;
+  width: 100%;
+  height: 555px;
+}
+body{
+  margin: 0px;
+  background-color: darkgreen;
+}
+.jugSemis{
+  background-color: white;
+  width:100px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.jugSemis2{
+  background-color: white;
+  width:100px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+
+}
