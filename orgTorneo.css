@@ -3,9 +3,24 @@ h1{
   justify-content: center;
   color: white;
 }
+.octavos{
+  background-color: lime;
+  padding: 5% 0 15% 0;
+  border-radius: 20px 20px 0px 0px;
+}
+.cuartos{
+  background-color: darkgreen;
+  padding: 5% 0 10% 0;
+  border-radius: 20px 20px 0px 0px;
+}
 .semis{
   background-color: lime;
-  padding: 15% 0 15% 0;
+  padding: 5% 0 10% 0;
+  border-radius: 20px 20px 0px 0px;
+}
+.final{
+  background-color: darkgreen;
+  padding: 5% 0 10% 0;
   border-radius: 20px 20px 0px 0px;
 }
 body{
@@ -14,9 +29,9 @@ body{
 }
 .jugSemis{
   background-color: white;
-  width:200px;
+  width:300px;
   height: 50px;
-  margin: 5px;
+  margin: 15px;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;

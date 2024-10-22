@@ -1,4 +1,4 @@
-function goAbout(){
+    function goAbout(){
     window.location = "About.html";
     }
     function goRules(){
@@ -6,7 +6,9 @@ function goAbout(){
     }
     function goLogin(){
       window.location = "Login.html";
+      localStorage.setItem("modo", "Partido");
     }
     function goTorneo(){
       window.location = "cantJugadores.html";
+      localStorage.setItem("modo", "Torneo");
     }
