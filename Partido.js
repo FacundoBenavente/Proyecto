@@ -2,12 +2,12 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 10;//300;
+var segundos = 3;//300;
 var segundos_muestra = 0;
 var ganador;
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
-});
+}); /*
 recieve("jugador", (data) =>{
   if(msjFinal.hidden == true){
   if(data = "jugador1"){
@@ -24,25 +24,25 @@ recieve("jugador", (data) =>{
     updateClock();
       }
     }
-})
+})*/
 
-/*function gol(mensaje){
-    if(msjFinal.hidden == true){
-    if(mensaje == "f"){
-        if(segundos_muestra > 0){
-        usgol1 ++;
-        Us1.innerHTML = usgol1;
+    function gol(mensaje){
+        if(msjFinal.hidden == true){
+        if(mensaje == "f"){
+            if(segundos_muestra > 0){
+            usgol1 ++;
+            Us1.innerHTML = usgol1;
+            }
+        } else if(mensaje == "j"){
+            if(segundos_muestra > 0){
+            usgol2 ++;
+            Us2.innerHTML = usgol2;
+            }
+        } else if(mensaje == "r"){
+            updateClock();
+              }
         }
-    } else if(mensaje == "j"){
-        if(segundos_muestra > 0){
-        usgol2 ++;
-        Us2.innerHTML = usgol2;
-        }
-    } else if(mensaje == "r"){
-        updateClock();
-          }
     }
-}*/
 
 
   function updateClock() {
@@ -58,8 +58,12 @@ recieve("jugador", (data) =>{
     count.innerHTML = minutos + ":" + "0" + segundos_muestra;
     }
     if(segundos==0 && minutos == 0){
+      if(localStorage.getItem("modo") == "Partido"){
       let usuarios = JSON.parse(localStorage.getItem("logeados"));
       msjFinal.hidden = false;
+      }  else if (localStorage.getItem("modo") == "Torneo"){
+        console.log("Torneo")
+      }
     
       let  resultado = {
         "users":  usuarios,

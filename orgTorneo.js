@@ -29,22 +29,22 @@ function numRandom(){
 }
 
 
-if(cantLogeados < 16){
+if(cantLogeados == 8){
     document.getElementById("octavosFinal").hidden = true;
-} 
- if(cantLogeados < 8){
+} else if(cantLogeados == 4){
+    document.getElementById("octavosFinal").hidden = true;
     document.getElementById("cuartosFinal").hidden = true;
     let jugs = orgCruces(cantLogeados, logeadosTorneo);
-    recorrrerDiv(jugs)
-    postData("orgTorneo", jugs);
-    }
-
- if(cantLogeados < 4){
+    recorrerDiv(jugs);
+    postData("orgTorneo", {jugs});
+    } else  if(cantLogeados == 2){
+    document.getElementById("octavosFinal").hidden = true;
+    document.getElementById("cuartosFinal").hidden = true;
     document.getElementById("semiFinal").hidden = true;
     
 }
 
-function recorrrerDiv(jugs){
+function recorrerDiv(jugs){
     let jugsemis = document.getElementsByClassName('jugSemis');
     for(jugadorsemi in jugsemis){
         jugsemis[jugadorsemi].textContent = jugs[jugadorsemi];

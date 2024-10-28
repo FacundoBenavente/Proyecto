@@ -173,7 +173,7 @@ function crearCuenta(usuario){
 
             // partido + hard
             
-            const port = new SerialPort({
+          /*  const port = new SerialPort({
                 //Completar con el puerto correcto
                 path: "COM3",
                 baudRate: 9600,
@@ -183,6 +183,47 @@ function crearCuenta(usuario){
               parser.on("data", function (data) {
                 console.log(data)
                 sendEvent("jugador", {data});
-              });
+              });*/
                 
+
+              // Torneo
+
+              onEvent("orgTorneo", (jugadores) =>{guardaEnfrenta(jugadores)})
+
+              function guardaEnfrenta(jugadores){
+                  console.log(jugadores);
+                  if(jugadores.length == 8){
+                    let partido1 = []; 
+                    partido1[0] = jugadores[0];
+                    partido1[1] = jugadores[1];
+                    let partido2 = [];
+                    partido2[0] = jugadores[2];
+                    partido2[1] =  jugadores[3];
+                    let partido3 = []; 
+                    partido3[0] = jugadores[4];
+                    partido3[1] = jugadores[5];
+                    let partido4 = [];
+                    partido4[0] = jugadores[6];
+                    partido4[1] =  jugadores[7]; 
+                    let enfrentaCuartos = [];
+                    for(i = 0; i < 4; i++){
+                        enfrentaCuartos[i] = `partido${i+1}`
+                    }
+                  }
+                   else if(jugadores.length == 4){
+                        let partido1 = []; 
+                        partido1[0] = jugadores[0];
+                        partido1[1] = jugadores[1];
+                        let partido2 = [];
+                        partido2[0] = jugadores[2];
+                        partido2[1] =  jugadores[3];
+                        let enfrentaSemi = [];
+                      /*  enfrentaSemi[0] = partido1;
+                        enfrentaSemi[1] = partido2;*/
+                        for(i = 0; i < 2; i++){
+                            enfrentaSemi[i] = `partido${i+1}`
+                        }
+                        console.log(enfrentaSemi);
+                  }
+              }
     startServer();
