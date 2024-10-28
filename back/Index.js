@@ -173,17 +173,17 @@ function crearCuenta(usuario){
 
             // partido + hard
             
-          /*  const port = new SerialPort({
+            const port = new SerialPort({
                 //Completar con el puerto correcto
-                path: "COM3",
+                path: "COM5",
                 baudRate: 9600,
               });
               const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 
               parser.on("data", function (data) {
                 console.log(data)
-                sendEvent("jugador", {data});
-              });*/
+                sendEvent("jugador", data);
+              });
                 
 
               // Torneo

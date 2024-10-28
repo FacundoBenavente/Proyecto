@@ -2,31 +2,32 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 3;//300;
+var segundos = 20;//300;
 var segundos_muestra = 0;
 var ganador;
-document.addEventListener("keydown", (letra) =>{
+/*document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
-}); /*
-recieve("jugador", (data) =>{
+}); */
+receive("jugador", (data) =>{
+  console.log(data);
   if(msjFinal.hidden == true){
-  if(data = "jugador1"){
+  if(data == "jugador1"){
     if(segundos_muestra > 0){
     usgol1 ++;
     Us1.innerHTML = usgol1;
     }
-  } else if(data = "jugador2"){
+  } else if(data == "jugador2"){
     if(segundos_muestra > 0){
     usgol2 ++;
     Us2.innerHTML = usgol2;
     }
-  }else if(data = "comienza"){
+  }else if(data == "comienza"){
     updateClock();
       }
     }
-})*/
+})
 
-    function gol(mensaje){
+   /* function gol(mensaje){
         if(msjFinal.hidden == true){
         if(mensaje == "f"){
             if(segundos_muestra > 0){
@@ -42,7 +43,7 @@ recieve("jugador", (data) =>{
             updateClock();
               }
         }
-    }
+    }*/
 
 
   function updateClock() {
