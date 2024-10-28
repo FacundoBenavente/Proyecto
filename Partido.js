@@ -5,10 +5,10 @@ var minutos = 0;
 var segundos = 20;//300;
 var segundos_muestra = 0;
 var ganador;
-/*document.addEventListener("keydown", (letra) =>{
+document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
-}); */
-receive("jugador", (data) =>{
+}); 
+/*receive("jugador", (data) =>{
   console.log(data);
   if(msjFinal.hidden == true){
   if(data == "jugador1"){
@@ -25,9 +25,9 @@ receive("jugador", (data) =>{
     updateClock();
       }
     }
-})
+})*/
 
-   /* function gol(mensaje){
+    function gol(mensaje){
         if(msjFinal.hidden == true){
         if(mensaje == "f"){
             if(segundos_muestra > 0){
@@ -43,7 +43,7 @@ receive("jugador", (data) =>{
             updateClock();
               }
         }
-    }*/
+    }
 
 
   function updateClock() {

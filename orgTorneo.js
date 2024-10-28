@@ -36,7 +36,7 @@ if(cantLogeados == 8){
     document.getElementById("cuartosFinal").hidden = true;
     let jugs = orgCruces(cantLogeados, logeadosTorneo);
     recorrerDiv(jugs);
-    postData("orgTorneo", {jugs});
+    postData("orgTorneo", jugs);
     } else  if(cantLogeados == 2){
     document.getElementById("octavosFinal").hidden = true;
     document.getElementById("cuartosFinal").hidden = true;
