@@ -3,6 +3,7 @@ import fs, { writeFileSync } from "fs"
 import { on } from "events";
 import { stringify } from "querystring";
  import { SerialPort } from "serialport";
+ import { ReadlineParser } from '@serialport/parser-readline';
 
 
 onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
@@ -172,15 +173,16 @@ function crearCuenta(usuario){
 
             // partido + hard
             
-         /*   const port = new SerialPort({
+            const port = new SerialPort({
                 //Completar con el puerto correcto
-                path: "COM7",
+                path: "COM3",
                 baudRate: 9600,
               });
+              const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 
-              port.on("data", function (data) {
+              parser.on("data", function (data) {
                 console.log(data)
                 sendEvent("jugador", {data});
               });
-                */
+                
     startServer();
