@@ -60,12 +60,11 @@ document.addEventListener("keydown", (letra) =>{
     }
     if(segundos==0 && minutos == 0){
       if(localStorage.getItem("modo") == "Partido"){
-      let usuarios = JSON.parse(localStorage.getItem("logeados"));
-      msjFinal.hidden = false;
       }  else if (localStorage.getItem("modo") == "Torneo"){
-        console.log("Torneo")
+        
       }
-    
+      msjFinal.hidden = false;
+      let usuarios = JSON.parse(localStorage.getItem("logeados"));
       let  resultado = {
         "users":  usuarios,
         "goles": [usgol1,usgol2]

@@ -1,9 +1,9 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
-import fs, { writeFileSync } from "fs"
+import fs, { readFileSync, writeFileSync } from "fs"
 import { on } from "events";
 import { stringify } from "querystring";
- import { SerialPort } from "serialport";
- import { ReadlineParser } from '@serialport/parser-readline';
+ //import { SerialPort } from "serialport";
+// import { ReadlineParser } from '@serialport/parser-readline';
 
 
 onEvent("registro", (usuario)=>{ return crearCuenta(usuario)})
@@ -188,9 +188,24 @@ function crearCuenta(usuario){
 
               // Torneo
 
-              onEvent("orgTorneo", (jugadores) =>{guardaEnfrenta(jugadores)})
+              onEvent("orgTorneo", (torneo ) =>{guardaEnfrenta(torneo)})
 
-              function guardaEnfrenta(jugadores){
-                 let partidoInicial = [];
-              }
+              function guardaEnfrenta(torneo){
+                fs.writeFileSync("Torneos.json", JSON.stringify(torneo));
+            }
+
+            onEvent("sorteado", ()=>{
+                let sorteado = false
+                const check = fs.readFileSync("Torneos.json");
+                try {
+                    JSON.parse(check) 
+                    sorteado = true;
+                    return sorteado; 
+                } catch (error) {
+                    sorteado = false
+                    return sorteado;
+                }
+               
+                
+            })
     startServer();
