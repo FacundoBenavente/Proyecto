@@ -194,7 +194,7 @@ function crearCuenta(usuario){
             if(JSONtornament[JSONtornament.length -1].fase == fases[i]){
                  sigFase = {
                     "jugadores": [ganador],
-                    "fase": fases[i ++]
+                    "fase": fases[i + 1]
                 }
                 console.log(sigFase);
             }
