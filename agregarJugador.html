@@ -10,19 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fresca&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>agregarJugador</title>
-    <h1>Agregar Jugadores</h1>
-    <div class="contieneTodo">
-    <div class = "contieneJugs" id =  "cajaJugs">
-    </div>
-    <button class="addPlayer" id = "agregaJug" onclick="agregarJugador()">AGREGAR JUGADOR</button>
-    </div>
 </head>
 <body>
-    
-
-
-    <script src="agregarJugador.js"></script>
+  <h1>Agregar Jugadores</h1>
+  <div class = "contieneJugs">
+   <ul id = "listaJugs">
+    </ul>
+    <ul id = "listaJugs2">
+      <li>Hola</li>
+    </ul>
+    <button class="addPlayer" id = "agregaJug" onclick="agregarJugador()">AGREGAR JUGADOR</button>
+   </div> 
+  <button class="siguiente" id = "siguienteBtn" onclick="Siguiente()">Siguiente</button>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="socket.js"></script>
+    <script src="agregarJugador.js"></script>
 </body>
 </html>

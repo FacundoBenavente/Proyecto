@@ -113,7 +113,7 @@ function crearCuenta(usuario){
                 let posUsr1 = getUsuario(data.resultado.users[0]) 
                 let posUsr2 = getUsuario(data.resultado.users[1]) 
                 let posUsr = [posUsr1, posUsr2];
-
+                let ganador = "";
                 for(let i = 0; i < posUsr.length; i++){
                     let contrario = 0;
                     if(i == 0){
@@ -126,6 +126,10 @@ function crearCuenta(usuario){
 
                     if(data.resultado.goles[i] > data.resultado.goles[contrario]){
                         usu.wins ++;
+                        // para el torneo
+                        if(data.resultado.numPartido >= 1){
+                          ganador = data.resultado.users[i];
+                        } 
                         if(usu.diferenciaGol < data.resultado.goles[i] - data.resultado.goles[contrario]){
                             usu.diferenciaGol = data.resultado.goles[i] - data.resultado.goles[contrario];
                             usu.mayorVictoria = data.resultado.goles[i] + "-" + data.resultado.goles[contrario];
@@ -144,11 +148,19 @@ function crearCuenta(usuario){
                         difGol = data.resultado.goles[i] - data.resultado.goles[contrario];
                         bestWin = data.resultado.goles[i] +"-" +data.resultado.goles[contrario];
                         pierde = 0;
+
+                        //para el torneo
+                        if(data.resultado.numPartido >= 1){
+                            console.log("Entra");
+                          ganador = data.resultado.users[i];
+                        } 
+
                     } else if(data.resultado.goles[i] < data.resultado.goles[contrario]){
                         gana = 0;
                         difGol = 0;
                         bestWin = "0-0";
                         pierde = 1;
+
                     }
                     let usuario = {
                         user: data.resultado.users[i],
@@ -159,6 +171,8 @@ function crearCuenta(usuario){
                         partidos: 1,
                         diferenciaGol: difGol
                     }
+  
+
                     let ustat = JSON.stringify(usuario);
                     jsonStat.usuarios.push(ustat);
 
@@ -169,9 +183,33 @@ function crearCuenta(usuario){
             const graba = JSON.stringify(jsonStat);
             console.log(jsonStat);
             fs.writeFileSync("Stats.json", graba);
+            //para el torneo
+            console.log(ganador);
+            if(data.resultado.numPartido  == 1){
+            let JSONtornament  = JSON.parse(fs.readFileSync("Torneos.json"));
+            let fases  = ["octavos", "cuartos", "semi", "final"];
+            let sigFase = {};
+            for(let i = 0; i < fases.length; i++){
+
+            if(JSONtornament[JSONtornament.length -1].fase == fases[i]){
+                 sigFase = {
+                    "jugadores": [ganador],
+                    "fase": fases[i ++]
+                }
+                console.log(sigFase);
             }
 
-            // partido + hard
+        }
+        JSONtornament.push(sigFase);
+        fs.writeFileSync("Torneos.json", JSON.stringify(JSONtornament));
+    } else if (data.resultado.numPartido > 1){
+        let JSONtornament  = JSON.parse(fs.readFileSync("Torneos.json"));
+        JSONtornament[JSONtornament.length].jugadores.push(ganador);
+        fs.writeFileSync("Torneos.json", JSON.stringify(JSONtornament));
+    }
+}
+
+                    // partido + hard
             
         /*    const port = new SerialPort({
                 //Completar con el puerto correcto
@@ -191,7 +229,9 @@ function crearCuenta(usuario){
               onEvent("orgTorneo", (torneo ) =>{guardaEnfrenta(torneo)})
 
               function guardaEnfrenta(torneo){
-                fs.writeFileSync("Torneos.json", JSON.stringify(torneo));
+                let jsonTorneo = [];
+                jsonTorneo.push(torneo);
+                fs.writeFileSync("Torneos.json", JSON.stringify(jsonTorneo));
             }
 
             onEvent("sorteado", ()=>{

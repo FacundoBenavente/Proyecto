@@ -2,9 +2,12 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 20;//300;
+var segundos = 3;//300;
 var segundos_muestra = 0;
 var ganador;
+let usuarios = JSON.parse(localStorage.getItem("logeados"));
+Usuario1.innerHTML = usuarios[0];
+Usuario2.innerHTML = usuarios[1];
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
 }); 
@@ -64,11 +67,20 @@ document.addEventListener("keydown", (letra) =>{
         
       }
       msjFinal.hidden = false;
-      let usuarios = JSON.parse(localStorage.getItem("logeados"));
-      let  resultado = {
+      let  resultado = {}
+      if (localStorage.getItem("modo") == "Partido"){
+        resultado = {
         "users":  usuarios,
         "goles": [usgol1,usgol2]
       }
+    } else if (localStorage.getItem("modo") == "Torneo"){
+          resultado = {
+          "users":  usuarios,
+          "goles": [usgol1,usgol2],
+          "numPartido": JSON.parse(localStorage.getItem("partidoNum"))
+        }
+      }
+    
         
       postData("setResultado", {resultado})
 
