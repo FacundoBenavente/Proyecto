@@ -61,10 +61,18 @@ document.addEventListener("keydown", (letra) =>{
     } else if(segundos_muestra < 10){
     count.innerHTML = minutos + ":" + "0" + segundos_muestra;
     }
-    if(segundos==0 && minutos == 0){
+    if(segundos==0 && minutos == 0){ 
+
+      if(usgol1 == usgol2 && localStorage.getItem("modo") == "Torneo"){{
+        segundos += 3 ; // 60
+        console.log("alargue")
+        updateClock();
+        
+        return
+      }}
       if(localStorage.getItem("modo") == "Partido"){
       }  else if (localStorage.getItem("modo") == "Torneo"){
-        
+        continueBtn.hidden = false;
       }
       msjFinal.hidden = false;
       let  resultado = {}
@@ -100,4 +108,27 @@ document.addEventListener("keydown", (letra) =>{
       segundos-=1;
       setTimeout("updateClock()",1000);
       }
+}
+function continuar(){
+  let LogTorneo = JSON.parse(localStorage.getItem("logeadosTorneo"));
+ let partidoNum = localStorage.getItem("partidoNum");
+ if(LogTorneo.length/2 > partidoNum){
+ partidoNum ++;
+ localStorage.setItem("partidoNum", partidoNum);
+ window.location = "Stats.html";
+ } else {
+  let fases = ["Octavos", "Cuartos", "Semi", "Final"];
+  let faseActual = localStorage.getItem("faseTorneo");
+  for(let i = 0; i < fases.length; i++){
+    if(fases[i] == faseActual){
+      localStorage.removeItem("partidoNum");
+      let fase = localStorage.getItem("fase");
+      fase ++;
+      window.location = `./OrgTorneo/${fases[i + 1]}.html`
+    }
+  }
+
+ }
+
+    
 }

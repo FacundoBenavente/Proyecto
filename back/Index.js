@@ -181,30 +181,17 @@ function crearCuenta(usuario){
             }
 
             const graba = JSON.stringify(jsonStat);
-            console.log(jsonStat);
             fs.writeFileSync("Stats.json", graba);
             //para el torneo
-            console.log(ganador);
             if(data.resultado.numPartido  == 1){
             let JSONtornament  = JSON.parse(fs.readFileSync("Torneos.json"));
-            let fases  = ["octavos", "cuartos", "semi", "final"];
-            let sigFase = {};
-            for(let i = 0; i < fases.length; i++){
-
-            if(JSONtornament[JSONtornament.length -1].fase == fases[i]){
-                 sigFase = {
-                    "jugadores": [ganador],
-                    "fase": fases[i + 1]
-                }
-                console.log(sigFase);
-            }
-
-        }
+            let sigFase = [];            
+                 sigFase[0] = ganador;
         JSONtornament.push(sigFase);
         fs.writeFileSync("Torneos.json", JSON.stringify(JSONtornament));
     } else if (data.resultado.numPartido > 1){
         let JSONtornament  = JSON.parse(fs.readFileSync("Torneos.json"));
-        JSONtornament[JSONtornament.length].jugadores.push(ganador);
+        JSONtornament[JSONtornament.length -1].push(ganador);
         fs.writeFileSync("Torneos.json", JSON.stringify(JSONtornament));
     }
 }
@@ -226,7 +213,6 @@ function crearCuenta(usuario){
 
               // Torneo
 
-              onEvent("orgTorneo", (torneo ) =>{guardaEnfrenta(torneo)})
 
               function guardaEnfrenta(torneo){
                 let jsonTorneo = [];
@@ -247,5 +233,38 @@ function crearCuenta(usuario){
                 }
                
                 
+            })
+
+            function numRandom(cantLogeados){
+                let num = Math.floor(Math.random()*(cantLogeados  - 0) + 0);
+                if(num == cantLogeados){
+                    numRandom(cantLogeados)
+                }
+                return num;
+            }
+            onEvent("orgCruces", (logeadosTorneo) => {orgCruces(logeadosTorneo)})
+            function orgCruces(logeadosTorneo){
+                let newOrg = [];
+                let cantLogeados = logeadosTorneo.length;
+                for(let i = 0; i < cantLogeados; i ++){
+                    let rndmNum = numRandom(cantLogeados);
+                      if(newOrg[rndmNum] == undefined) {
+                        newOrg[rndmNum] = logeadosTorneo[i];
+                    }else if(newOrg[rndmNum] != undefined){
+                        i = i -1;
+                    } 
+                    if(i == cantLogeados){
+                        for( let j = 0; j < cantLogeados; j++){
+                            if(newOrg[j] == undefined){
+                                logeadosTorneo[i] = newOrg[j];
+                            }
+                        }
+                    }
+                } 
+                guardaEnfrenta(newOrg)
+            }
+            onEvent("obtenerJugs",(fase) =>{
+                let jugadores = JSON.parse(fs.readFileSync("Torneos.json"));
+                return jugadores[fase];
             })
     startServer();

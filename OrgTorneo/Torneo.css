@@ -1,0 +1,80 @@
+.jugadores{
+    background-color: white;
+    width:300px;
+    height: 120px;
+    margin: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  body {
+    background-color: rgb(165, 223, 165);
+    margin: 0px;
+  }
+  h1{
+    color: white;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .titulo{
+    text-align: center;
+  }
+  table{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cajaTitulo{
+        width:auto;
+        height: 80px;
+        padding: 8px;
+        background-color: #3D7125;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .logoImg{
+        margin-top: 5px;
+        height: 80%;
+        margin-left: 20px;
+      }
+      .lineaImg{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .orgTorneo{
+        margin-top: 15px;
+      }
+
+
+      .siguiente{
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        height: 80px;
+        width: 380px;
+        border-radius: 60px;
+        font-weight: 600;
+        margin-top: 50px;
+         color: #000;
+        font-family: Inter;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+    }
+    .siguiente:hover{
+        background-color: lightgray;
+    }

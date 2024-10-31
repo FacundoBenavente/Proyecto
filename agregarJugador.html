@@ -12,16 +12,26 @@
     <title>agregarJugador</title>
 </head>
 <body>
-  <h1>Agregar Jugadores</h1>
-  <div class = "contieneJugs">
-   <ul id = "listaJugs">
-    </ul>
-    <ul id = "listaJugs2">
-      <li>Hola</li>
-    </ul>
-    <button class="addPlayer" id = "agregaJug" onclick="agregarJugador()">AGREGAR JUGADOR</button>
+  <div style="width: 100%; text-align: center;">
+    
+    <div class = "contieneJugs">      
+      <h1>Ingresar Jugadores</h1>
+
+      <div id="col1">
+        <ul id = "listaJugs" class = "listas">
+        </ul>
+      </div>
+      <div id="col2">
+        <ul id = "listaJugs2" class = "listas">
+        </ul>    
+      </div>
+
+      <button class="addPlayer" id = "agregaJug" onclick="agregarJugador()">Ingresar Jugador</button>
    </div> 
-  <button class="siguiente" id = "siguienteBtn" onclick="Siguiente()">Siguiente</button>    
+     
+  <button class="siguiente" id = "siguienteBtn" onclick="Siguiente()">LISTO</button>    
+   <h4 id = "maxJugs" hidden>Se alcanzo la mayor cantidad de jugadores disponibles</h4>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="socket.js"></script>
     <script src="agregarJugador.js"></script>

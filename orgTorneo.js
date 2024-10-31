@@ -1,32 +1,7 @@
 let cantLogeados = JSON.parse(localStorage.getItem("cantidadLog"));
 let logeadosTorneo = JSON.parse(localStorage.getItem("logeadosTorneo"));
-function numRandom(){
-    let num = Math.floor(Math.random()*(cantLogeados  - 0) + 0);
-    if(num == cantLogeados){
-        numRandom()
-    }
-    return num;
-}
- function orgCruces(cantLogeados, logeadosTorneo){
-    let newOrg = [];
 
-    for(let i = 0; i < cantLogeados; i ++){
-        rndmNum = numRandom();
-          if(newOrg[rndmNum] == undefined) {
-            newOrg[rndmNum] = logeadosTorneo[i];
-        }else if(newOrg[rndmNum] != undefined){
-            i = i -1;
-        } 
-        if(i == cantLogeados){
-            for( let j = 0; j < cantLogeados; j++){
-                if(newOrg[j] == undefined){
-                    logeadosTorneo[i] = newOrg[j];
-                }
-            }
-        }
-    } 
-    return newOrg;
-}
+
 
 let players =[]
 if(cantLogeados == 8){

@@ -1,56 +1,100 @@
 h1{
-    display: flex;
-    justify-content: center;
-    color: white;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 body{
-    background: linear-gradient(to bottom right, #3D7125 9%, #82DA59 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #3D7125 9%, #82DA59 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #3D7125 9%, #82DA59 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #3D7125 9%, #82DA59 50%) top right / 50% 50% no-repeat;
+    
+    background:  #3D7125;
 }
 .addPlayer{
-    cursor: pointer;
-    display: flex;
-    align-self: flex-end;
+    cursor: pointer;    
     border: none;
-    background-color: gray;
-    height: 25px;
-    width: 160px;
-    border-radius: 20px;
-    font-weight: 600;
-    text-align: center;
+    background-color: #B5B5B5;
+    height: 65px;
+    width: 360px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  
+}
+#col1{
+    margin-top: 10px;
+    width: 150px;
+    float: left;
+    height:270px ;
+}
+#col2{
+    margin-top: 10px;
+    width: 150px;
+    float: left;
+    height:270px ;
 }
 .siguiente{
     cursor: pointer;
-    display: flex;
-    align-self: flex-end;
-    position: fixed;
-    right: 45%;
     border: none;
     background-color: white;
-    height: 25px;
-    width: 160px;
-    border-radius: 20px;
+    height: 80px;
+    width: 380px;
+    border-radius: 60px;
     font-weight: 600;
     text-align: center;
+    margin-top: 50px;
+     color: #000;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+ 
 }
 .siguiente:hover{
     background-color: lightgray;
-
 }
 .addPlayer:hover{
     background-color: lightgray;
 }
 .jugs{
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    text-align: left;
 }
 .contieneJugs{
     background-color: white;
     border-radius: 25px;
-    margin-top: 40px;
-    width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: column;
+    margin-top: 80px;
+    width: 380px;
+    height: 450px;
+    padding-top: 10px;
+        
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.listas{
+    list-style-type: '- ';
+}
+h4{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
