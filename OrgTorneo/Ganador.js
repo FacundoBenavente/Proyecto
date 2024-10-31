@@ -1,3 +1,7 @@
+function Siguiente(){
+    localStorage.clear();
+    window.location = "../index.html"
+}
 let fase = localStorage.getItem("fase");
 postData("obtenerJugs",fase, (jugadores)=>{
     localStorage.setItem("logeadosTorneo",JSON.stringify(jugadores));
@@ -9,16 +13,4 @@ function recorrerDiv(players){
     for(jugadorsemi in jugsemis){
         jugsemis[jugadorsemi].textContent = players[jugadorsemi];
     }
-}
-
-function Siguiente(){
-    let partidoNum = localStorage.getItem("partidoNum");
-        if(partidoNum == null){
-            localStorage.setItem("partidoNum", 1);
-        } else {
-            partidoNum ++
-            localStorage.setItem("partidoNum", JSON.stringify(partidoNum));
-        }
-        localStorage.setItem("faseTorneo", "Final");
-    window.location = "../Stats.html";
 }

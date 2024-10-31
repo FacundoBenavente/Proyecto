@@ -33,6 +33,7 @@
                         if(!data){
                             cuentaExiste()
                         } else{
+                            Register();
                             listo.hidden = true;
                         }
                     })
@@ -44,6 +45,8 @@
                         email: email,
                         password: password
                     }
+
+
                     postData("login", {user}, (data) =>{
                         if(data){
                             logeados[0] = user.email;
@@ -56,15 +59,6 @@
                 }
             }
             function Logeado(){
-                listo.hidden = false;
-                listo.innerHTML = "¡Listo!";
-                submitBtn.disabled = true;
-                userEmail.disabled = true;
-                Contraseña.disabled = true;
-                registrarse.hidden = true;
-                Contraseña.style.cursor = "not-allowed";
-                userEmail.style.cursor = "not-allowed";
-                submitBtn.style.cursor = "not-allowed";
                 logeado = true;
                 checkButtons()
             }
@@ -77,7 +71,7 @@
                 listo.innerHTML = "Tu cuenta ya existe";
             }
             function checkButtons() {
-                if(logeado === true ){
+                if(logeado){
                     postData("loged", logeados, (usuariosName)=>{
                         logeadosTorneo = JSON.parse(localStorage.getItem("logeadosTorneo"));
                         if(logeadosTorneo == null){
@@ -85,12 +79,24 @@
                             logeadosTorneo[0] = usuariosName[0];
                             localStorage.setItem("logeadosTorneo", JSON.stringify(logeadosTorneo));
                         }else{
-                        let logdSave = usuariosName[0];
-                        logeadosTorneo.push(logdSave);     
-                        localStorage.setItem("logeadosTorneo", JSON.stringify(logeadosTorneo));
-                        }
-                    })
-                    window.location = "agregarJugador.html";
+                            let logdSave = usuariosName[0];                        
 
+                            for(let i = 0; i < logeadosTorneo.length; i++){
+                                if(logeadosTorneo[i] == logdSave){
+                                    listo.hidden = false;
+                                    listo.innerHTML = "Tu cuenta ya se encuentra logueada";
+                                    logeado = false;
+                                    return;                                    
+                                }
+                            }                            
+                                 
+                            logeadosTorneo.push(logdSave);     
+                            localStorage.setItem("logeadosTorneo", JSON.stringify(logeadosTorneo));                        
+                        
                         }
+                        window.location = "agregarJugador.html";
+                    })
+                    
+                      
                 }
+            }

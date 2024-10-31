@@ -265,6 +265,7 @@ function crearCuenta(usuario){
             }
             onEvent("obtenerJugs",(fase) =>{
                 let jugadores = JSON.parse(fs.readFileSync("Torneos.json"));
+                console.log(fase)
                 return jugadores[fase];
             })
     startServer();

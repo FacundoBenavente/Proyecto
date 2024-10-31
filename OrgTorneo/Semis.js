@@ -19,6 +19,6 @@ function Siguiente(){
             partidoNum ++
             localStorage.setItem("partidoNum", JSON.stringify(partidoNum));
         }
-        localStorage.setItem("faseTorneo", "Semi");
+        localStorage.setItem("faseTorneo", "Semis");
     window.location = "../Stats.html";
 }

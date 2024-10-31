@@ -117,14 +117,23 @@ function continuar(){
  localStorage.setItem("partidoNum", partidoNum);
  window.location = "Stats.html";
  } else {
-  let fases = ["Octavos", "Cuartos", "Semi", "Final"];
+  let fases = ["Octavos", "Cuartos", "Semis", "Final"];
   let faseActual = localStorage.getItem("faseTorneo");
+  if(faseActual == "Final"){
+    localStorage.removeItem("partidoNum");
+    let fase = localStorage.getItem("fase");
+    fase ++;
+    localStorage.setItem("fase", fase);
+    window.location = "./OrgTorneo/Ganador.html";
+  }else {
   for(let i = 0; i < fases.length; i++){
     if(fases[i] == faseActual){
-      localStorage.removeItem("partidoNum");
-      let fase = localStorage.getItem("fase");
-      fase ++;
-      window.location = `./OrgTorneo/${fases[i + 1]}.html`
+       localStorage.removeItem("partidoNum");
+         let fase = localStorage.getItem("fase");
+        fase ++;
+        localStorage.setItem("fase", fase);
+         window.location = `./OrgTorneo/${fases[i + 1]}.html`
+      }
     }
   }
 

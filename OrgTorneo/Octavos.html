@@ -18,7 +18,7 @@
         <h1 class = "orgTorneo">ORGANIZACIÓN DEL TORNEO</h1>
         </div>
     <h1 class  = "titulo">OCTAVOS DE FINAL</h1>
-    <table>
+    <table >
       <tr>
         <td><div class = "jugadores"></div></td> 
         <td><div class = "jugadores"></div></td> 
@@ -47,6 +47,14 @@
         <td><div class = "jugadores"></div></td> 
        <td><div class = "jugadores"></div></td> 
       </tr>
+      <tr>
+        <td colspan="5" style="text-align: center;">
+            <button class="siguiente" id = "siguienteBtn" onclick="Siguiente()">LISTO</button>    
+        </td>
+      </tr>
     </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../socket.js"></script>
+    <script src="Octavos.js"></script>
 </body>
 </html>
