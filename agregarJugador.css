@@ -8,8 +8,8 @@ h1{
     line-height: normal;
 }
 body{
-    
-    background:  #3D7125;
+    background-image: url("./Imgs/FondoDegrade.png");
+    background-size: cover;
 }
 .addPlayer{
     cursor: pointer;    
@@ -76,7 +76,7 @@ body{
 .contieneJugs{
     background-color: white;
     border-radius: 25px;
-    margin-top: 80px;
+    margin-top: 40px;
     width: 380px;
     height: 450px;
     padding-top: 10px;
