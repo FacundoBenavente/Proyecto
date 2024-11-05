@@ -47,6 +47,7 @@ function clickLogin(){
             if(!data){
                 cuentaExiste()
             } else{
+                Register1()
                 listo.hidden = true;
             }
         })
@@ -85,6 +86,7 @@ function clickLogin2(){
             if(!data){
                 cuentaExiste2()
             } else{
+                Register2()
                 listo2.hidden = true;
             }
         })
