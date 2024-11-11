@@ -63,11 +63,17 @@ button{
   margin-top: 25px;
    color: #000;
   font-family: Inter;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 button:hover{
   background-color: rgb(199, 196, 196);
+}
+.revanchaInicio{
+  padding-left: 300px;
+  padding-right: 300px;
+  display: flex;
+  justify-content: space-between;
 }
