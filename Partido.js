@@ -63,18 +63,24 @@ document.addEventListener("keydown", (letra) =>{
     }
     if(segundos==0 && minutos == 0){ 
 
-      if(usgol1 == usgol2 && localStorage.getItem("modo") == "Torneo"){{
+      if(usgol1 == usgol2 && localStorage.getItem("modo") == "Torneo"){
         segundos += 3 ; // 60
         console.log("alargue")
         updateClock();
         
         return
-      }}
+      }
+      let Countdown = document.getElementById("Countdown");
+
       if(localStorage.getItem("modo") == "Partido"){
         volverAinicio.hidden = false;
         revancha.hidden = false;
+        Countdown.hidden = true;
+        Marcador.style.marginBottom = 90 + "px";
       }  else if (localStorage.getItem("modo") == "Torneo"){
         continueBtn.hidden = false;
+        Countdown.hidden = true;
+        Marcador.style.marginBottom = 90 + "px";
       }
       msjFinal.hidden = false;
       let  resultado = {}
