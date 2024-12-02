@@ -20,4 +20,17 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-bottom: 0px;
+      }
+      .cancha{
+        height: 548px;
+        width: auto;
+        margin-right: 120px;
+        margin-top: -25px;
+      }
+
+      .todo{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 0px;
       }

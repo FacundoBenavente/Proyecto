@@ -30,3 +30,14 @@ body {
         font-weight: 350;
         line-height: normal;
     }
+    .cancha{
+      height: 548px;
+      width: auto;
+      margin-right: 120px;
+      margin-top: 45px;
+    }
+
+    .todo{
+      display: flex;
+      margin-bottom: 0px;
+    }
