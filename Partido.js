@@ -2,7 +2,7 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 3//300;
+var segundos = 80; //300;
 var segundos_muestra = 0;
 var ganador;
 let usuarios = JSON.parse(localStorage.getItem("logeados"));
@@ -51,7 +51,8 @@ document.addEventListener("keydown", (letra) =>{
 
   function updateClock() {
     minutos = Math.floor(segundos/60);
-    if(minutos > 1){
+    console.log(minutos + ":" + segundos_muestra);
+    if(segundos > 60){
         segundos_muestra = segundos -60*minutos;
     } else if(minutos <= 0){
         segundos_muestra = segundos;
