@@ -44,10 +44,14 @@
     }
 .Finalmsj{
     color: rgb(228, 226, 226);
-    font-size: 25px;
-} .winMsj{
+    font-size: 40px;
+}
+.Pausamsj{
+    color: black;
+    font-size: 40px;
+}  .winMsj{
   color: rgb(228, 226, 226);
-  font-size: 25px;
+  font-size: 40px;
 }
 button{
   background-color: white;

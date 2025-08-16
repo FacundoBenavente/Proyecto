@@ -5,6 +5,8 @@ var minutos = 0;
 var segundos = 80; //300;
 var segundos_muestra = 0;
 var ganador;
+var segundos_pausa = 0;
+var playtime = true;
 let usuarios = JSON.parse(localStorage.getItem("logeados"));
 Usuario1.innerHTML = usuarios[0];
 Usuario2.innerHTML = usuarios[1];
@@ -15,13 +17,15 @@ document.addEventListener("keydown", (letra) =>{
   console.log(data);
   if(msjFinal.hidden == true){
   if(data == "jugador1"){
-    if(segundos_muestra > 0){
+    if(segundos_muestra > 0 && playtime){
     usgol1 ++;
+    pausaGol(3);
     Us1.innerHTML = usgol1;
     }
   } else if(data == "jugador2"){
-    if(segundos_muestra > 0){
+    if(segundos_muestra > 0 && playtime){
     usgol2 ++;
+    pausaGol(3);
     Us2.innerHTML = usgol2;
     }
   }else if(data == "comienza"){
@@ -33,25 +37,41 @@ document.addEventListener("keydown", (letra) =>{
     function gol(mensaje){
         if(msjFinal.hidden == true){
         if(mensaje == "f"){
-            if(segundos_muestra > 0){
+            if(segundos_muestra > 0 && playtime){
             usgol1 ++;
             Us1.innerHTML = usgol1;
+            pausaGol(3);
             }
-        } else if(mensaje == "j"){
+        } else if(mensaje == "j" && playtime){
             if(segundos_muestra > 0){
             usgol2 ++;
             Us2.innerHTML = usgol2;
+            pausaGol(3);
             }
         } else if(mensaje == "r"){
             updateClock();
               }
         }
     }
-
+    function pausaGol(secs){
+      playtime = false;
+      segundos_pausa = secs;
+      let Pausagol = document.getElementById("Pausagol");
+      Pausagol.hidden = false;
+      Pausagol.innerHTML = segundos_pausa;
+      console.log("pausaGol: " + segundos_pausa);
+      segundos_pausa -= 1;
+      if(segundos_pausa > 0){
+      setTimeout("pausaGol("+segundos_pausa+")",1000);
+      } else {
+        playtime = true;
+        Pausagol.hidden = true;
+        updateClock();
+      }
+    }
 
   function updateClock() {
     minutos = Math.floor(segundos/60);
-    console.log(minutos + ":" + segundos_muestra);
     if(segundos > 60){
         segundos_muestra = segundos -60*minutos;
     } else if(minutos <= 0){
@@ -112,7 +132,7 @@ document.addEventListener("keydown", (letra) =>{
           msjWin.innerHTML = "Empate";
           msjWin.hidden = false;
       }
-    }else{
+    }else if(playtime){
       segundos-=1;
       setTimeout("updateClock()",1000);
       }
