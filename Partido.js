@@ -2,11 +2,12 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 80; //300;
+var segundos = 63; //300;
 var segundos_muestra = 0;
 var ganador;
 var segundos_pausa = 0;
 var playtime = true;
+var partidoEmpezado = false;
 let usuarios = JSON.parse(localStorage.getItem("logeados"));
 Usuario1.innerHTML = usuarios[0];
 Usuario2.innerHTML = usuarios[1];
@@ -28,7 +29,8 @@ document.addEventListener("keydown", (letra) =>{
     pausaGol(3);
     Us2.innerHTML = usgol2;
     }
-  }else if(data == "comienza"){
+  }else if(data == "comienza" && !partidoEmpezado){
+    partidoEmpezado = true;
     updateClock();
       }
     }
@@ -48,7 +50,8 @@ document.addEventListener("keydown", (letra) =>{
             Us2.innerHTML = usgol2;
             pausaGol(3);
             }
-        } else if(mensaje == "r"){
+        } else if(mensaje == "r" && !partidoEmpezado){
+          partidoEmpezado = true;
             updateClock();
               }
         }
@@ -59,10 +62,8 @@ document.addEventListener("keydown", (letra) =>{
       let Pausagol = document.getElementById("Pausagol");
       Pausagol.hidden = false;
       Pausagol.innerHTML = segundos_pausa;
-      console.log("pausaGol: " + segundos_pausa);
-      segundos_pausa -= 1;
       if(segundos_pausa > 0){
-      setTimeout("pausaGol("+segundos_pausa+")",1000);
+      setTimeout("pausaGol("+ (segundos_pausa - 1) + ")",1000);
       } else {
         playtime = true;
         Pausagol.hidden = true;
@@ -72,12 +73,12 @@ document.addEventListener("keydown", (letra) =>{
 
   function updateClock() {
     minutos = Math.floor(segundos/60);
-    if(segundos > 60){
+    if(segundos >= 60){
         segundos_muestra = segundos -60*minutos;
     } else if(minutos <= 0){
         segundos_muestra = segundos;
     } 
-    if(segundos_muestra > 10){
+    if(segundos_muestra >= 10){
     count.innerHTML = minutos + ":" + segundos_muestra;
     } else if(segundos_muestra < 10){
     count.innerHTML = minutos + ":" + "0" + segundos_muestra;
