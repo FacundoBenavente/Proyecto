@@ -2,7 +2,7 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 63; //300;
+var segundos = 3; //300;
 var segundos_muestra = 0;
 var ganador;
 var segundos_pausa = 0;
