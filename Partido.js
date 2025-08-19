@@ -72,6 +72,7 @@ document.addEventListener("keydown", (letra) =>{
     }
 
   function updateClock() {
+    if(playtime){
     minutos = Math.floor(segundos/60);
     if(segundos >= 60){
         segundos_muestra = segundos -60*minutos;
@@ -137,6 +138,7 @@ document.addEventListener("keydown", (letra) =>{
       segundos-=1;
       setTimeout("updateClock()",1000);
       }
+    }
 }
 function continuar(){
   let LogTorneo = JSON.parse(localStorage.getItem("logeadosTorneo"));
