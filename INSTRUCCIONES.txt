@@ -1,0 +1,20 @@
+INSTRUCCIONES:
+ 
+ R para empezar un partido
+ 
+Correr el servidor:
+1: Abrir la terminal (ctrl + shift + ñ)
+2: escribir "cd back" en la terminal para entrar a la carpeta de back
+3: escribir "node index.js" para ejecutar el archivo y correr el server
+
+Conexión con el hard:
+1: en index.js en la carpeta back en donde dice "partido + hard"
+poner el puerto que se este usando. (hay mucho codigo, busquen con ctrl f)
+2: correr el servidor una vez se conecte el cable del hard (creo)
+
+Advertencias:
+Evitar volver atras en partidos y torneos, hay datos temporales
+en el localstorage que al volver atras van a quedar ahí y pueden causar
+problemas. Si se hace quilombo por eso vayan a la pestaña final de un 
+partido/ la ganadora del torneo y apretar volver al inicio para que
+se borren los datos.

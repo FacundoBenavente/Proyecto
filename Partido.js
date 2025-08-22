@@ -2,7 +2,7 @@ var letra;
 var usgol1 = 0;
 var usgol2 = 0;
 var minutos = 0;
-var segundos = 3; //300;
+var segundos = 300;
 var segundos_muestra = 0;
 var ganador;
 var segundos_pausa = 0;
@@ -14,7 +14,7 @@ Usuario2.innerHTML = usuarios[1];
 document.addEventListener("keydown", (letra) =>{
    gol(letra.key);
 }); 
-/*receive("jugador", (data) =>{
+receive("jugador", (data) =>{
   console.log(data);
   if(msjFinal.hidden == true){
   if(data == "jugador1"){
@@ -29,16 +29,16 @@ document.addEventListener("keydown", (letra) =>{
     pausaGol(3);
     Us2.innerHTML = usgol2;
     }
-  }else if(data == "comienza" && !partidoEmpezado){
+  } /*else if(data == "comienza" && !partidoEmpezado){
     partidoEmpezado = true;
     updateClock();
-      }
+      } */
     }
-})*/
+})
 
     function gol(mensaje){
         if(msjFinal.hidden == true){
-        if(mensaje == "f"){
+        /*if(mensaje == "f"){
             if(segundos_muestra > 0 && playtime){
             usgol1 ++;
             Us1.innerHTML = usgol1;
@@ -50,7 +50,7 @@ document.addEventListener("keydown", (letra) =>{
             Us2.innerHTML = usgol2;
             pausaGol(3);
             }
-        } else if(mensaje == "r" && !partidoEmpezado){
+        } else*/ if(mensaje == "r" && !partidoEmpezado){
           partidoEmpezado = true;
             updateClock();
               }
