@@ -87,7 +87,7 @@ receive("jugador", (data) =>{
     if(segundos==0 && minutos == 0){ 
 
       if(usgol1 == usgol2 && localStorage.getItem("modo") == "Torneo"){
-        segundos += 3 ; // 60
+        segundos += 60;
         console.log("alargue")
         updateClock();
         
